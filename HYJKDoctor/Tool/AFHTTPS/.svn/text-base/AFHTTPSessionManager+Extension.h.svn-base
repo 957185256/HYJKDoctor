@@ -1,0 +1,36 @@
+//
+//  AFHTTPSessionManager+Extension.h
+//  TJDemo
+//
+//  Created by stb on 15/11/13.
+//  Copyright © 2015年 stb. All rights reserved.
+//
+
+
+#import "AFHTTPSessionManager.h"
+#import "SoapUtility.h"
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface AFHTTPSessionManager(SOAP)
+/**
+ *  自定义扩展AF的soap请求方法
+ *
+ *  @param URLString  url地址
+ *  @param method     接口名称
+ *  @param parameters 参数
+ *  @param success    成功回调
+ *  @param failure    失败回调
+ *
+ *  @return return value description
+ */
+- (nullable NSURLSessionDataTask *)SOAP:(NSString *)URLString
+                                 method:(NSString *)method
+                             parameters:(nullable id)parameters
+                                success:(nullable void (^)(NSURLSessionDataTask *task, id responseObject))success
+                                failure:(nullable void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+
+NS_ASSUME_NONNULL_END
+
+
+@end

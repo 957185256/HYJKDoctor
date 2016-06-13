@@ -1,0 +1,68 @@
+//
+//  AFHTTPSessionManager+Extension.m
+//  TJDemo
+//
+//  Created by stb on 15/11/13.
+//  Copyright © 2015年 stb. All rights reserved.
+//
+
+#import "AFHTTPSessionManager+Extension.h"
+
+@implementation AFHTTPSessionManager(SOAP)
+
+/**
+ *  自定义扩展AF的soap请求方法
+ *
+ *  @param URLString  url地址
+ *  @param method     接口名称
+ *  @param parameters 参数
+ *  @param success    成功回调
+ *  @param failure    失败回调
+ *
+ *  @return return value description
+ */
+- (nullable NSURLSessionDataTask *)SOAP:(NSString *)URLString
+                                 method:(NSString *)method
+                             parameters:(nullable id)parameters
+                                success:(nullable void (^)(NSURLSessionDataTask *task, id responseObject))success
+                                failure:(nullable void (^)(NSURLSessionDataTask *task, NSError *error))failure{
+    
+    [self.requestSerializer setValue:@"text/xml;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    self.responseSerializer = [AFHTTPResponseSerializer serializer];
+    NSError *serializationError = nil;
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"POST" URLString:URLString parameters:nil error:&serializationError];
+    SoapUtility *soap = [[SoapUtility alloc] init];
+    NSString *soapData = [soap buildSoapwithMethodName:method withParamsDic:parameters];
+    [request setHTTPBody:[soapData dataUsingEncoding:NSUTF8StringEncoding]];
+    if (serializationError) {
+        if (failure) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu"
+            dispatch_async(self.completionQueue ?: dispatch_get_main_queue(), ^{
+                failure(nil, serializationError);
+            });
+#pragma clang diagnostic pop
+        }
+        
+        return nil;
+    }
+    
+    __block NSURLSessionDataTask *dataTask = nil;
+    dataTask = [self dataTaskWithRequest:request completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+        if (error) {
+            if (failure) {
+                failure(dataTask, error);
+            }
+        } else {
+            if (success) {
+                success(dataTask, responseObject);
+            }
+        }
+    }];
+    
+    [dataTask resume];
+    
+    return dataTask;
+    
+}
+@end

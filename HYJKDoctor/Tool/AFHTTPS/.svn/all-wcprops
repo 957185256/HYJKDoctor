@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/Mobile_Src/!svn/ver/390/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS
+END
+SSBaseRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/Mobile_Src/!svn/ver/327/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SSBaseRequest.h
+END
+AFClient.m
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/Mobile_Src/!svn/ver/189/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/AFClient.m
+END
+WParametersModel.h
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/Mobile_Src/!svn/ver/189/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/WParametersModel.h
+END
+UseModel.h
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/Mobile_Src/!svn/ver/189/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/UseModel.h
+END
+AFHTTPSessionManager+Extension.h
+K 25
+svn:wc:ra_dav:version-url
+V 190
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/AFHTTPSessionManager+Extension.h
+END
+SSBaseRequest.m
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/Mobile_Src/!svn/ver/390/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SSBaseRequest.m
+END
+WParametersModel.m
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/Mobile_Src/!svn/ver/189/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/WParametersModel.m
+END
+DealWithModel.h
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/Mobile_Src/!svn/ver/189/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/DealWithModel.h
+END
+UseModel.m
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/Mobile_Src/!svn/ver/189/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/UseModel.m
+END
+AFHTTPSessionManager+Extension.m
+K 25
+svn:wc:ra_dav:version-url
+V 190
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/AFHTTPSessionManager+Extension.m
+END
+AFClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/Mobile_Src/!svn/ver/189/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/AFClient.h
+END
+DealWithModel.m
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/Mobile_Src/!svn/ver/189/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/DealWithModel.m
+END

@@ -1,0 +1,446 @@
+//
+//  SSBaseRequest.m
+//  Ma17i56－基类网络数据请求类（封装）
+//
+//  Created by Sinoservice on 15/10/27.
+//  Copyright (c) 2015年 odg. All rights reserved.
+//
+
+#import "SSBaseRequest.h"
+#import "AFHTTPSessionManager+Extension.h"
+#import "SoapArray.h"
+#import "SoapFault.h"
+#import "Soap.h"
+//#import "SSNavigationViewController.h"
+//#import "SSLoginViewController.h"
+#import "AppDelegate.h"
+//#import "AFHTTPRequestOperationManager.h"
+
+static CGFloat const kTimeoutInterval = 25.0f;
+
+@interface SSBaseRequest ()
+
++ (BOOL)isReachable;
+
+@end
+
+@implementation SSBaseRequest
+
+
+/**
+ *  判断网络是否可用
+ *  @return 状态
+ */
++ (BOOL)isReachable{
+
+    return [AFNetworkReachabilityManager sharedManager].isReachable;
+}
+
+
+#pragma mark -普通http请求部分
+/**
+ *  接口请求－普通请求-Get
+ *
+ *  @param parameters 接口参数
+ *  @param success    成功回调
+ *  @param failure    失败回调
+ */
++ (void)requestGetWithParameters:(NSDictionary *)parameters
+                      requestUrl:(NSString *)url
+                         success:(SuccessBlock)success
+                         failure:(FailureBlock)failure{
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = kTimeoutInterval;
+    NSSet *acceptableContentTypes = [NSSet setWithObjects:@"application/json",
+                                     @"text/html",
+                                     @"text/json",
+                                     @"text/javascript",
+                                     @"text/plain", nil];
+    manager.responseSerializer.acceptableContentTypes = acceptableContentTypes;
+    
+    
+    NSString *requestUrl=[NSString stringWithFormat:@"%@:%@%@/%@",[[ProUserDefaultsTool shareInstance] getServiceURl],[[ProUserDefaultsTool shareInstance] getServicePort1],[[ProUserDefaultsTool shareInstance] getServiceProjectName],url];
+    
+    //没有端口号
+    if([[[ProUserDefaultsTool shareInstance] getServicePort1] length]==0)
+    {
+        requestUrl=[NSString stringWithFormat:@"%@%@/%@",[[ProUserDefaultsTool shareInstance] getServiceURl],[[ProUserDefaultsTool shareInstance] getServiceProjectName],url];
+    }
+    
+    //如果url已经是全拼路径的话 就直接使用该路径
+    if ([url hasPrefix:@"http://"] || [url hasPrefix:@"https://"]) {
+        requestUrl = url;
+    }
+    
+    
+    [manager GET:requestUrl parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        success(responseObject);
+
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        NSString *errorMessage = [error.userInfo valueForKey:@"NSLocalizedDescription"];
+//        [[UIApplication sharedApplication].keyWindow addSubview:[UIView viewWithMessage:errorMessage]];
+        
+        if(failure){
+            failure(errorMessage);
+        }
+    }];
+}
+
+/**
+ *  接口请求－普通请求-Post
+ *
+ *  @param parameters 接口参数
+ *  @param success    成功回调
+ *  @param failure    失败回调
+ */
++ (void)requestPostWithParameters:(NSDictionary *)parameters
+                       requestUrl:(NSString *)url
+                          success:(SuccessBlock)success
+                          failure:(FailureBlock)failure{
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = kTimeoutInterval;
+    
+    
+    NSString *requestUrl=[NSString stringWithFormat:@"%@:%@%@/%@",
+                          [[ProUserDefaultsTool shareInstance] getServiceURl],
+                          [[ProUserDefaultsTool shareInstance] getServicePort1],
+                          [[ProUserDefaultsTool shareInstance] getServiceProjectName],url];
+    
+    //没有端口号
+    if([[[ProUserDefaultsTool shareInstance] getServicePort1] length]==0)
+    {
+        requestUrl=[NSString stringWithFormat:@"%@%@/%@",[[ProUserDefaultsTool shareInstance] getServiceURl],[[ProUserDefaultsTool shareInstance] getServiceProjectName],url];
+    }
+    
+    //如果url已经是全拼路径的话 就直接使用该路径
+    if ([url hasPrefix:@"http://"] || [url hasPrefix:@"https://"]) {
+        requestUrl = url;
+    }
+    
+    
+    [manager POST:requestUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        NSString *errorMessage = [error.userInfo valueForKey:@"NSLocalizedDescription"];
+        //        [[UIApplication sharedApplication].keyWindow addSubview:[UIView viewWithMessage:errorMessage]];
+        if(failure){
+            failure(errorMessage);
+        }
+
+    }];
+    
+}
+
+#pragma mark - 文件上传请求部分
+
+/**
+ *  文件上传请求-NSData
+ *
+ *  @param url      上传地址
+ *  @param file     NSData文件数据
+ *  @param fileName 文件传输key名称
+ *  @param success  成功回调
+ *  @param failure  失败回调
+ */
+/*
+- (void)postUploadFileByNSData : (NSString *) serverurl AndNsData : (NSData *)file AndFileName :(NSString *) fileName
+                     success:(SuccessBlock)success
+                     failure:(FailureBlock)failure
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    // AFHTTPResponseSerializer就是正常的HTTP请求响应结果:NSData
+    // 当请求的返回数据不是JSON,XML,PList,UIImage之外,使用AFHTTPResponseSerializer
+    // 例如返回一个html,text...
+    //
+    // 实际上就是AFN没有对响应数据做任何处理的情况
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    // formData是遵守了AFMultipartFormData的对象
+    [manager POST:serverurl parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        
+        // 将本地的文件上传至服务器
+        //NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"头像1.png" withExtension:nil];
+        //[formData appendPartWithFileURL:fileURL name:fileName error:NULL];
+        [formData appendPartWithFormData:file name:fileName];
+        
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+
+        success(responseObject);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorMessage = [error.userInfo valueForKey:@"NSLocalizedDescription"];
+        ODGLOG(@"错误 %@", error.localizedDescription);
+        if(failure){
+            failure(errorMessage);
+        }
+    }];
+}
+*/
+/**
+ *  文件上传请求-NSURL
+ *
+ *  @param url      上传地址
+ *  @param file     NSData文件数据
+ *  @param fileName 文件传输key名称
+ *  @param success  成功回调
+ *  @param failure  失败回调
+ */
+/*
+- (void)postUploadFileByNSURL : (NSString *) serverurl AndNSURL : (NSURL *)fileURL AndFileName :(NSString *) fileName
+                     success:(SuccessBlock)success
+                     failure:(FailureBlock)failure
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    // AFHTTPResponseSerializer就是正常的HTTP请求响应结果:NSData
+    // 当请求的返回数据不是JSON,XML,PList,UIImage之外,使用AFHTTPResponseSerializer
+    // 例如返回一个html,text...
+    //
+    // 实际上就是AFN没有对响应数据做任何处理的情况
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    // formData是遵守了AFMultipartFormData的对象
+    [manager POST:serverurl parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        
+        // 将本地的文件上传至服务器
+        [formData appendPartWithFileURL:fileURL name:fileName error:NULL];
+        
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        success(responseObject);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorMessage = [error.userInfo valueForKey:@"NSLocalizedDescription"];
+        ODGLOG(@"错误 %@", error.localizedDescription);
+        if(failure){
+            failure(errorMessage);
+        }
+    }];
+    
+}
+*/
+#pragma mark - 文件下载部分
+
+- (void)sessionDownloadFileByUrl : (NSString *) fielUrl
+{
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:config];
+    
+    //NSString *urlString = @"http://localhost/itcast/videos/01.C语言-语法预览.mp4";
+    NSString *urlString = [fielUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    NSURLSessionDownloadTask *task = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        // 指定下载文件保存的路径
+        // NSLog(@"%@ %@", targetPath, response.suggestedFilename);
+        // 将下载文件保存在缓存路径中
+        NSString *cacheDir = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+        NSString *path = [cacheDir stringByAppendingPathComponent:response.suggestedFilename];
+        
+        // URLWithString返回的是网络的URL,如果使用本地URL,需要注意
+        NSURL *fileURL1 = [NSURL URLWithString:path];
+        NSURL *fileURL = [NSURL fileURLWithPath:path];
+        
+        ODGLOG(@"== %@ |||| %@", fileURL1, fileURL);
+        
+        return fileURL;
+    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        ODGLOG(@"%@ %@", filePath, error);
+    }];
+    
+    [task resume];
+}
+
+#pragma mark -soap请求部分
+
+/**
+ *  soap请求方法WebServices返回json形式
+ *
+ *  @param method  接口名称
+ *  @param params  请求参数字典
+ *  @param success 成功回调
+ *  @param failure 失败回调
+ */
+/*
+-(void)requestSoapWithMethodJson:(NSString *)method paramDict:(NSDictionary *)params
+                     success:(SuccessBlock)success
+                     failure:(FailureBlock)failure{
+    
+    NSString * URL=[NSString stringWithFormat:@"%@:%@%@",PROJECT_URL,PROJECT_PORT1,PROJECT_WEBSERVICES];
+    //    第二种访问方法（新方法）
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 10.0f;
+    
+    [manager SOAP:URL method:method parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        DDXMLDocument *xmlDoc = [[DDXMLDocument alloc] initWithData:responseObject options:0 error:nil];
+        NSArray *nodes = [xmlDoc children];
+        DDXMLElement *element = nodes[0];
+        NSData* xmlData = [element.stringValue dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:xmlData options:0 error:nil];
+        
+        if (success) {
+            success(dict);
+        }
+        ODGLOG(@"%@",dict);
+        
+    } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+        //错误情况
+        if (failure) {
+            NSString *errormsg = [NSString stringWithFormat:@"解析失败!"];
+            failure(errormsg);
+        }
+    }];
+}
+ */
+/**
+ *  soap请求方法-WebServices返回xml形式
+ *
+ *  @param method  接口名称
+ *  @param params  请求参数字典
+ *  @param success 成功回调
+ *  @param failure 失败回调
+ */
+/*
+-(void)requestSoapWithMethodXML:(NSString *)method paramDict:(NSDictionary *)params
+                        success:(SuccessBlock)success
+                        failure:(FailureBlock)failure{
+
+    NSString * URL=[NSString stringWithFormat:@"%@:%@%@",PROJECT_URL,PROJECT_PORT1,PROJECT_WEBSERVICES];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 10.0f;
+    
+    [manager SOAP:URL method:method parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        
+        NSError *error;
+        CXMLDocument* doc = [[CXMLDocument alloc] initWithData:responseObject options: 0 error: nil];
+        if(doc == nil) {
+            //为空情况
+            if (failure) {
+                failure(@"返回xml为空，解析失败！");
+            };
+        }else{
+            id output = nil;
+            SoapFault* fault = [SoapFault faultWithXMLDocument: doc];
+            if([fault hasFault]) {
+                //错误情况
+                if (failure) {
+                    NSString *errormsg = [NSString stringWithFormat:@"解析失败"];
+                    failure(errormsg);
+                };
+            } else {
+                
+                NSArray *nodes = [doc children];
+                DDXMLElement *element = nodes[0];
+                if(deserializeTo == nil) {
+                    output = [self parseXmlPower:element];
+                    if (success) {
+                        success(output);
+                    }
+                    ODGLOG(@"%@",output);
+                }
+            }
+        }
+    } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+        //错误情况
+        if (failure) {
+            NSString *errormsg = [NSString stringWithFormat:@"解析失败!"];
+            failure(errormsg);
+        }
+    }];
+}
+*/
+#pragma mark - 万能解析xml方法
+
+-(id)parseXmlPower :(DDXMLElement*) element{
+    return [self deserialize:element];
+}
+
+- (id) deserialize: (DDXMLElement*) element{
+    if([element children].count < 1) {
+        return [element stringValue];
+    } else {
+        return [self deserializeAsDictionary:element];
+    }
+    
+    return nil;
+}
+
+-(id)deserializeAsDictionary:(DDXMLElement*)element {
+    if([element childCount] == 1) {
+        DDXMLElement* child = [[element children] objectAtIndex:0];
+        if([child kind] == DDXMLTextKind) {
+            return [[[element children] objectAtIndex:0] stringValue];
+        }
+    }
+    
+    NSMutableDictionary* d = [NSMutableDictionary dictionary];
+    for(DDXMLElement* child in [element children]) {
+        id v = [self deserialize:child];
+        if(v == nil) { v = [NSNull null]; }
+        NSLog(@"%@",[child name]);
+        if ([d valueForKey:[child name]]) {
+            //有数组了的情况
+            NSMutableArray *a =nil;
+            if([[d valueForKey:[child name]] isKindOfClass:[NSMutableArray class]]){
+                a = [d valueForKey:[child name]];
+                [d removeAllObjects];
+                [d setObject:v forKey:[child name]];
+                [a addObject:[d copy]];
+                [d removeAllObjects];
+                [d setObject:a forKey:[child name]];
+                
+            }else{
+                //还没有数组的情况
+                a =[NSMutableArray array];
+                [a addObject:[d copy]];
+                [d removeAllObjects];
+                [d setObject:v forKey:[child name]];
+                [a addObject:[d copy]];
+                [d setObject:a forKey:[child name]];
+            }
+        }else{
+            [d setObject:v forKey:[child name]];
+        }
+    }
+    return d;
+}
+
+//跳转到登录页面
+-(void)filterLogout : (NSString *) msg{
+    /*
+    [[UIApplication sharedApplication].keyWindow removeFromSuperview];
+    for(UIView *view in [UIApplication sharedApplication].keyWindow.subviews){
+        [view removeFromSuperview];
+    }
+    AppDelegate *appDelegate =[[UIApplication sharedApplication] delegate];
+    //关闭Gps后台上传服务
+    [appDelegate stopPostMyGpsLocationService];
+    
+    SSLoginViewController *loginController = [[SSLoginViewController alloc] init];
+    SSNavigationViewController *nvController = [[SSNavigationViewController alloc] initWithRootViewController:loginController];
+    
+    nvController.navigationBar.translucent = NO;
+    [nvController.navigationBar setBarTintColor:UIColorWithRGB(60, 141, 230)];
+    nvController.navigationBar.barStyle = UIBarStyleBlack;
+    
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    window.rootViewController=nvController;
+    if (msg!=nil&&![msg isEqualToString:@""]) {
+        //提示被挤下线了
+        [[UIApplication sharedApplication].keyWindow addSubview:[UIView BottomviewWithMessage:msg]];
+    }else{
+        //提示被挤下线了
+        [[UIApplication sharedApplication].keyWindow addSubview:[UIView BottomviewWithMessage:@"被迫下线！"]];
+    }
+    */
+}
+
+@end

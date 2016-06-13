@@ -1,0 +1,202 @@
+//
+//  HYJKDoctor-Prefix.pch
+//  HYJKDoctor
+//
+//  Created by sqz on 16/5/26.
+//  Copyright © 2016年 Noah. All rights reserved.
+//
+
+#ifndef HYJKDoctor_Prefix_pch
+#define HYJKDoctor_Prefix_pch
+
+
+#import <Masonry.h>
+#import "Methods.h"
+#import "Header.h"
+#import "YYModel.h"
+#import "MJRefresh.h"
+#import "SSBaseRequest.h"
+#import "UIImage+RTTint.h"//改变图片颜色
+#import "IQKeyboardManager.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#pragma mark - 快速开发宏
+//系统导航
+#define appDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
+//系统字体
+#define QuickFont(S) [UIFont fontWithName:@"Helvetica" size:S]
+//快速照片
+#define QuickImage(image)  [UIImage imageNamed:image]
+//快速本地图片
+#define QuickContentsImage(image,type)  [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:image ofType:type]]
+//快速原图片
+#define QuickOriginalImage(image) [[UIImage imageNamed:image]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+//加载中的图片
+#define QuickLoadingImage  [[UIImage imageNamed:@"loading.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0) resizingMode:UIImageResizingModeStretch]
+//获取百度资源路径
+#define MYBUNDLE_NAME @ "mapapi.bundle"
+#define MYBUNDLE_PATH [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: MYBUNDLE_NAME]
+#define MYBUNDLE [NSBundle bundleWithPath: MYBUNDLE_PATH]
+
+//快速连接
+#define QuickURL(U) [NSURL URLWithString:U]
+//快速字符串
+#define QuickNSString(str1,str2)      [NSString stringWithFormat:str1,str2]
+
+//block
+#define WS(weakSelf) __weak __typeof(&*self) weakSelf = self
+
+//单例
+#define DEFINE_SINGLETON_FOR_CLASS(className) \
+\
++ ( instancetype )sharedInstance { \
+static className *shared##className = nil; \
+static dispatch_once_t onceToken; \
+dispatch_once(&onceToken, ^{ \
+shared##className = [[self alloc] init]; \
+}); \
+return shared##className; \
+}
+
+// 是否装车 使用前提dafaultsTool 已经在appdelegate创建了
+#define IS_CARLOAD  [appDelegate.dafaultsTool getIsCarLoad]
+
+//FIXME: 测试待修改
+#define Login_UserId [[ProUserDefaultsTool getNSUserDefaults] getUserId]
+
+#define Driver_Account [[ProUserDefaultsTool getNSUserDefaults] getDriverAccount]
+//#define Driver_Account @"18859209104"
+
+#define ISLOGIN  [[NSUserDefaults standardUserDefaults] objectForKey:@"isLogin"]
+
+// 路径
+#define Cache_File_Path [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]
+#define Document_File_Path [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+
+
+#pragma mark - 颜色
+//============================颜色================================
+//总色调
+#define BaseColor RGB(255,207,0,1)
+//系统背景颜色
+#define kSystemBgColor [UIColor colorWithRed:240.0/255.0 green:240.0/255.0 blue:240.0/255.0 alpha:1]
+//列表高低度
+#define HeaderFooterheight 10.0f
+//列表Accessory背景颜色
+#define kSystemAccessoryViewColor RGB(64,224,208,0.1)
+//列表Select系统颜色
+#define kSystemSelectBackgroundColor RGB(214,214,214,0.8)
+
+//颜色
+#define RGB(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:a/1.0f]
+//颜色
+#define RGB_X(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+//RGB_X(0x067AB5)
+
+
+//颜色
+#define UICOLOR_RGB(a, b, c) [UIColor colorWithRed:a/255.0f green:b/255.0f blue:c/255.0f alpha:1]
+#define UICOLOR_RGB_A(a, b, c, alp) [UIColor colorWithRed:a/255.0f green:b/255.0f blue:c/255.0f alpha:alp]
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define UIColorFromRCGA(rgbValue,alpha) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alpha]
+
+#define CLEAR_COLOR [UIColor clearColor]
+#define DARK_GRAY_COLOR [UIColor darkGrayColor]
+#define BLACK_COLOR [UIColor blackColor]
+#define WHITE_COLOR [UIColor whiteColor]
+#define BLUE_COLOR [UIColor blueColor]
+#define LIGHT_GRAY_COLOR [UIColor lightGrayColor]
+#define GRAY_COLOR [UIColor grayColor]
+#define RED_COLOR [UIColor redColor]
+#define ORANGE_COLOR [UIColor orangeColor]
+
+#define GRAY_COLOR_BG UICOLOR_RGB(244, 244, 244)
+#define GRAY_COLOR_TABLEVIEWLINE UICOLOR_RGB(200, 200, 200)
+#define GRAY_BorderColor [UIColor colorWithRed:220/255.f green:220/255.f blue:220/255.f alpha:1.0].CGColor
+
+
+#define CustomThemeColor  [Methods cutomThemColor]
+//#define CustomThemeColor UICOLOR_RGB_A(68, 189, 187, 1)
+//***************************字体***************************
+#define fontWithSize(size) [UIFont systemFontOfSize:size]
+#define blodFontWithSize(size) [UIFont boldSystemFontOfSize:size]
+
+//***************************字体***************************
+
+//***************************版本配置***************************
+//判断版本
+#define IOSVersion         ([[[[UIDevice currentDevice] systemVersion] substringToIndex:1] intValue])
+#define IsIOS9               ([[[[UIDevice currentDevice] systemVersion] substringToIndex:1] intValue]==9)
+#define IsIOS8               ([[[[UIDevice currentDevice] systemVersion] substringToIndex:1] intValue]==8)
+#define IsIOS7               ([[[[UIDevice currentDevice] systemVersion] substringToIndex:1] intValue]==7)
+#define IsIOS6               ([[[[UIDevice currentDevice] systemVersion] substringToIndex:1] intValue]==6)
+
+//iOSV
+#define IOSV_OR_LATER(v) ([UIDevice currentDevice].systemVersion.floatValue>=v)
+
+//判断机器
+#define IsIPhone4_4S    (ScreenWidth==320.000000&&ScreenHeight==480.000000)
+#define IsIPhone5s      (ScreenWidth==320.000000&&ScreenHeight==568.000000)
+#define IsIPhone6       (ScreenWidth==375.000000&&ScreenHeight==667.000000)
+#define IsIPhone6Plus   (ScreenWidth==414.000000&&ScreenHeight==736.000000)
+
+//屏幕长度
+#define ScreenHeight    [[UIScreen mainScreen] bounds].size.height
+//屏幕宽度
+#define ScreenWidth     [[UIScreen mainScreen] bounds].size.width
+//最大输入长度
+#define MaxLength      [NSString stringWithFormat:@"%lld",LONG_LONG_MAX];
+
+#define APPNavBarHeight    64
+#define APPTabBarHeight    49
+
+
+//************************输出日志************************
+#ifdef DEBUG
+#define CLog(format, ...) NSLog(format, ## __VA_ARGS__)
+#else
+#define CLog(format, ...)
+#endif
+
+/**
+ *  常规日志
+ */
+#ifdef DEBUG
+#define ODGLOG(format,...)	\
+do{	\
+fprintf(stderr, "<%s : %d> %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __func__);	\
+(NSLog)((format), ##__VA_ARGS__);	\
+fprintf(stderr, "-----------------\n");	\
+} while(0);
+#else
+#define ODGLOG(...)
+#endif
+
+
+//************************key************************
+#define UmengAppkey @"5678f8a0e0f55a4850001cdd"
+#define MD5_Key @"jiujinapp"
+#define PageSize @"15"
+#define kNotLeftMeunKey @"kNotLeftMeunKey"
+#define appKeyID @"1232321321"
+#define AppID       @"org.hemeiyun.sesame.ios"
+#define AppKey      @"t9h9t13LQ2zlyr7"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+//************************ Frame ************************
+#pragma mark Frame宏
+
+#define  QZMAKEOF6(h)    [Methods formatSpaceFromIphone6:h]
+
+#define  RECTMAKEOF5(x,y,w,h)    [Methods formatCGRectFromIphone5:CGRectMake(x,y,w,h)]
+#define  SIZEMAKEOF5(w,h)    [Methods formatCGSizeFromIphone5:CGSizeMake(w,h)]
+#define  MAKEOF5(h)    [Methods formatHEIGHTFromIphone5:h]
+//************************ Frame ************************
+
+
+
+
+#endif /* HYJKDoctor_Prefix_pch */

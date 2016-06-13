@@ -1,0 +1,17 @@
+//
+//  WeatherReponse.h
+//  JLTShipper
+//
+//  Created by sinoservices on 16/5/5.
+//  Copyright © 2016年 Noah. All rights reserved.
+//
+
+#import "BaseReponse.h"
+
+@interface WeatherReponse : BaseReponse
+
+@property (nonatomic, copy)NSString *cityName;
+@property (nonatomic, copy)NSString *temperature;
+@property (nonatomic, copy)NSString *windDirection;
+
+@end

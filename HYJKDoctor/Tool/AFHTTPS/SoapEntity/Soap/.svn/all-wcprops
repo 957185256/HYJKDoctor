@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap
+END
+SoapObject.h
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapObject.h
+END
+NSData+Base64.h
+K 25
+svn:wc:ra_dav:version-url
+V 189
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/NSData+Base64.h
+END
+NSMutableArray+Soap.m
+K 25
+svn:wc:ra_dav:version-url
+V 195
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/NSMutableArray+Soap.m
+END
+SoapDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapDelegate.h
+END
+SoapFault.h
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapFault.h
+END
+SoapObject.m
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapObject.m
+END
+NSData+Base64.m
+K 25
+svn:wc:ra_dav:version-url
+V 189
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/NSData+Base64.m
+END
+SoapHandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 187
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapHandler.h
+END
+SoapArray.h
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapArray.h
+END
+Soap.h
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/Soap.h
+END
+SoapFault.m
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapFault.m
+END
+SoapParameter.h
+K 25
+svn:wc:ra_dav:version-url
+V 189
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapParameter.h
+END
+SoapHandler.m
+K 25
+svn:wc:ra_dav:version-url
+V 187
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapHandler.m
+END
+SoapNil.h
+K 25
+svn:wc:ra_dav:version-url
+V 183
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapNil.h
+END
+SoapArray.m
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapArray.m
+END
+Soap.m
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/Soap.m
+END
+SoapParameter.m
+K 25
+svn:wc:ra_dav:version-url
+V 189
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapParameter.m
+END
+SoapNil.m
+K 25
+svn:wc:ra_dav:version-url
+V 183
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapNil.m
+END
+SoapRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 187
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapRequest.h
+END
+SoapLiteral.h
+K 25
+svn:wc:ra_dav:version-url
+V 187
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapLiteral.h
+END
+SoapRequest.m
+K 25
+svn:wc:ra_dav:version-url
+V 187
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapRequest.m
+END
+SoapReachability.h
+K 25
+svn:wc:ra_dav:version-url
+V 192
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapReachability.h
+END
+SoapLiteral.m
+K 25
+svn:wc:ra_dav:version-url
+V 187
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapLiteral.m
+END
+NSMutableArray+Soap.h
+K 25
+svn:wc:ra_dav:version-url
+V 195
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/NSMutableArray+Soap.h
+END
+SoapReachability.m
+K 25
+svn:wc:ra_dav:version-url
+V 192
+/svn/Mobile_Src/!svn/ver/200/02%20%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/G-%E5%9B%BD%E8%8D%AF%E5%B9%B3%E5%8F%B0/02Source/iOS/JLTShipper/JLTShipper/Tool/AFHTTPS/SoapEntity/Soap/SoapReachability.m
+END

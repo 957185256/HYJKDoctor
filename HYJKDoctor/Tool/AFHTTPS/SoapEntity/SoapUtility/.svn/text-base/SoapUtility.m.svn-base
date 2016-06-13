@@ -1,0 +1,87 @@
+//
+//  SSBaseService.h
+//  SinoServices
+//
+//  Created by 钟华雄 on 15/5/8.
+//  Copyright (c) 2015年 zzy. All rights reserved.
+//
+
+#import "SoapUtility.h"
+
+
+@interface SoapUtility()
+
+@end
+
+@implementation SoapUtility
+
+
+
+/**
+ *  @author 钟华雄, 15-05-08 11:22:09
+ *
+ *  封装soap格式
+ *
+ *  @param methodName 方法名
+ *  @param paramsDic  参数字典
+ *
+ *  @return string
+ */
+-(NSString *)buildSoapwithMethodName:(NSString *)methodName withParamsDic:(NSDictionary *)paramsDic
+{
+    // <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+    // xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+    // xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
+    // xmlns:c = "http://schemas.xmlsoap.org/soap/encoding/" >
+    //     <soap:Header/>
+    //     <soap:Body>
+    //     <methodName xmlns="http://xxxx.com"/>
+    //          <param></param>
+    //          <param></param>
+    //          <param></param>
+    //          .......
+    //     </methodName/>
+    //     </soap:Body>
+    // </soap:Envelope>
+    
+    //根节点
+    DDXMLElement *ddRoot = [DDXMLElement elementWithName:@"soap:Envelope"];
+    //根节点的命名空间
+    [ddRoot addNamespace:[DDXMLNode namespaceWithName:@"soap" stringValue:@"http://schemas.xmlsoap.org/soap/envelope/"]];
+    [ddRoot addNamespace:[DDXMLNode namespaceWithName:@"mob" stringValue:@"http://mobility.tes.sinoservices.com"]];
+    [ddRoot addNamespace:[DDXMLNode namespaceWithName:@"" stringValue:@"http://entity.mobility.tes.sinoservices.com"]];
+    //头
+    DDXMLElement *ddHeader = [DDXMLElement elementWithName:@"soap:Header"];
+    //body
+    DDXMLElement *ddBody = [DDXMLElement elementWithName:@"soap:Body"];
+    
+    //方法
+    DDXMLElement *msg= [DDXMLElement elementWithName:methodName];
+    
+    //特殊新增
+    DDXMLElement *mob = [DDXMLElement elementWithName:@"mob:in0"];
+    
+    
+    for (NSInteger i = 0; i < paramsDic.count; i ++) {
+        
+        NSString *keyStr = [NSString stringWithFormat:@"%li",i];
+        
+        NSDictionary *value = paramsDic[keyStr];
+        
+        [value enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+            DDXMLElement *paramnode = [DDXMLElement elementWithName:key stringValue:obj];
+            [mob addChild:paramnode];
+        }];
+        
+    }
+    //参数
+    [msg addChild:mob];
+    [ddBody addChild:msg];
+    [ddRoot addChild:ddHeader];
+    [ddRoot addChild:ddBody];
+    
+    return [ddRoot XMLString];
+}
+
+
+@end
