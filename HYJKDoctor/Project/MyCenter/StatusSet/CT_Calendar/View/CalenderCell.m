@@ -12,9 +12,9 @@
 
 - (void)awakeFromNib {
     // Initialization code
-//    self.dayStr.layer.cornerRadius = QZMAKEOF6(38)/2.;
-//    self.dayStr.layer.masksToBounds = YES;
-//    self.dayStr.backgroundColor = RGB(226, 226, 226, 1);
+    self.dayStr.layer.cornerRadius = ScreenWidth/7/2.;
+    self.dayStr.layer.masksToBounds = YES;
+    self.dayStr.backgroundColor = RGB(247, 247, 247, 1);
     self.backgroundColor = [UIColor clearColor];
 }
 

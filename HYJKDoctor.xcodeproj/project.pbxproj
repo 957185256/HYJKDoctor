@@ -13,6 +13,7 @@
 		1119731E1D0F9D6C00096101 /* OrderDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1119731D1D0F9D6C00096101 /* OrderDetailsModel.m */; };
 		111973211D0FA7DB00096101 /* OrderDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 111973201D0FA7DB00096101 /* OrderDetailsTableViewCell.m */; };
 		111973241D0FB2D400096101 /* OrderDetailsFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 111973231D0FB2D400096101 /* OrderDetailsFootView.m */; };
+		111973271D0FDB2D00096101 /* StatusSetFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 111973261D0FDB2D00096101 /* StatusSetFootView.m */; };
 		116137C31D0E5F7B00F67C5B /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 116137B61D0E5F7B00F67C5B /* SearchVC.m */; };
 		116137C41D0E5F7B00F67C5B /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 116137B91D0E5F7B00F67C5B /* SearchModel.m */; };
 		116137C51D0E5F7B00F67C5B /* SearchFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 116137BC1D0E5F7B00F67C5B /* SearchFooterView.m */; };
@@ -116,6 +117,8 @@
 		111973201D0FA7DB00096101 /* OrderDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsTableViewCell.m; sourceTree = "<group>"; };
 		111973221D0FB2D400096101 /* OrderDetailsFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailsFootView.h; sourceTree = "<group>"; };
 		111973231D0FB2D400096101 /* OrderDetailsFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsFootView.m; sourceTree = "<group>"; };
+		111973251D0FDB2D00096101 /* StatusSetFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusSetFootView.h; sourceTree = "<group>"; };
+		111973261D0FDB2D00096101 /* StatusSetFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusSetFootView.m; sourceTree = "<group>"; };
 		116137B51D0E5F7B00F67C5B /* SearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
 		116137B61D0E5F7B00F67C5B /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
 		116137B81D0E5F7B00F67C5B /* SearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchModel.h; sourceTree = "<group>"; };
@@ -489,6 +492,8 @@
 			children = (
 				116137EE1D0E5FCE00F67C5B /* StatusSetTableView.h */,
 				116137EF1D0E5FCE00F67C5B /* StatusSetTableView.m */,
+				111973251D0FDB2D00096101 /* StatusSetFootView.h */,
+				111973261D0FDB2D00096101 /* StatusSetFootView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1013,6 +1018,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3348C9B91CF8AF3D0006514A /* MJSettingLabelItem.m in Sources */,
+				111973271D0FDB2D00096101 /* StatusSetFootView.m in Sources */,
 				3348C8FA1CF887FF0006514A /* CustomIOS7AlertView.m in Sources */,
 				116137F11D0E5FCE00F67C5B /* PatentManagerTableView.m in Sources */,
 				3348C8F51CF887FF0006514A /* NSDate+QZCategory.m in Sources */,

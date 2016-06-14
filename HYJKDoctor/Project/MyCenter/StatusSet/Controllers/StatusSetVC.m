@@ -9,12 +9,15 @@
 #import "StatusSetVC.h"
 #import "CalendarHeadView.h"
 #import "StatusSetTableView.h"
+#import "StatusSetFootView.h"
 
 @interface StatusSetVC ()
 
 @property (nonatomic, strong) CalendarHeadView *headView;
 
 @property (nonatomic, strong) StatusSetTableView *tableView;
+
+@property (nonatomic, strong) StatusSetFootView *footView;
 
 @end
 
@@ -36,7 +39,9 @@
     if (!_tableView)
     {
         _tableView = [[StatusSetTableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) style:UITableViewStylePlain];
+        _tableView.bounces = NO;
         _tableView.tableHeaderView = self.headView;
+        _tableView.tableFooterView = self.footView;
     }
     return _tableView;
 }
@@ -47,6 +52,15 @@
 //        _headView.delegate = self;
     }
     return _headView;
+}
+
+- (StatusSetFootView *)footView
+{
+    if (!_footView)
+    {
+        _footView = [[StatusSetFootView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, QZMAKEOF6(65))];
+    }
+    return _footView;
 }
 
 - (void)didReceiveMemoryWarning {

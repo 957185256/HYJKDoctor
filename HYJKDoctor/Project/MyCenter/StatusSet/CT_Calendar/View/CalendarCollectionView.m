@@ -41,36 +41,45 @@
     cell.bgImageView.image = nil;
     CalenderModel *model = _dateArr[indexPath.row];
     cell.dayStr.text = model.day;
-    cell.bgImageView.image = [UIImage imageNamed:@"normal"];
-    if ([_currentDate currentYear] == [model.year integerValue] && [_currentDate currentMonth] == [model.month integerValue] && [_currentDate currentDay] == [model.day integerValue]) {
+//    cell.bgImageView.image = [UIImage imageNamed:@"normal"];
+    if ([_currentDate currentYear] == [model.year integerValue] && [_currentDate currentMonth] == [model.month integerValue] && [_currentDate currentDay] == [model.day integerValue])
+    {
 //        cell.bgImageView.image = [UIImage imageNamed:@"allow"];
+        cell.dayStr.textColor = CustomThemeColor;
         _selectedCell = cell;
-        if (!_isFirst) {
-            cell.dayStr.textColor = CustomThemeColor;
-            _isFirst = YES;
-        }
-    }else {
-        if (![cell.dayStr.text isEqualToString:@""]) {
+    }
+    else
+    {
+        cell.dayStr.textColor = BLACK_COLOR;
+        if (![cell.dayStr.text isEqualToString:@""])
+        {
 //            cell.bgImageView.image = [UIImage imageNamed:@"normal"];
         }
     }
     return cell;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return CGSizeMake(38, 38.5);
-}
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    return CGSizeMake(38, 38.5);
+//}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     CalenderModel *model = _dateArr[indexPath.row];
-    if ([_currentDate currentYear] > [model.year integerValue]) {
-//        [ShareFunction showToast:@"不能穿越哦!"];
-    } else if ([_currentDate currentMonth] > [model.month integerValue]) {
-//        [ShareFunction showToast:@"不能穿越哦!"];
-    } else if ([_currentDate currentDay] > [model.day integerValue]) {
-//        [ShareFunction showToast:@"不能穿越哦!"];
-    }else {
+    if ([_currentDate currentYear] > [model.year integerValue])
+    {
+//        [Methods showMBProgressHint:@"不能穿越哦！"];
+    }
+    else if ([_currentDate currentMonth] > [model.month integerValue])
+    {
+//        [Methods showMBProgressHint:@"不能穿越哦！"];
+    }
+    else if ([_currentDate currentDay] > [model.day integerValue])
+    {
+//        [Methods showMBProgressHint:@"不能穿越哦！"];
+    }
+    else
+    {
         CalenderCell *cell = (CalenderCell *)[collectionView cellForItemAtIndexPath:indexPath];
         if (![_selectedCell isEqual:cell]) {
             _selectedCell.bgImageView.image = [UIImage imageNamed:@"normal"];

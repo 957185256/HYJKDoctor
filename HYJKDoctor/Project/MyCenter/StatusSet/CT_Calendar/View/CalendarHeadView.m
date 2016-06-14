@@ -43,8 +43,11 @@
 //    [self addSubview:self.bgView4];
     
 //    [self addSubview:self.selectedBtn];
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, _collectionView.bottom + QZMAKEOF6(10), self.width, 1)];
+    line.backgroundColor = RGB(244, 244, 245, 1);
+    [self addSubview:line];
     
-    self.height = _collectionView.bottom + QZMAKEOF6(20);
+    self.height = line.bottom;
 }
 
 - (void)dateWith:(NSDate *)oldDate {
@@ -102,10 +105,14 @@
     if (_collectionView == nil) {
         UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
         [flow setSectionInset:UIEdgeInsetsMake(0, 0, 0, 0)];
-        flow.minimumInteritemSpacing = QZMAKEOF6(2);
-        flow.minimumLineSpacing = QZMAKEOF6(2);
+//        flow.minimumInteritemSpacing = QZMAKEOF6(2);
+//        flow.minimumLineSpacing = QZMAKEOF6(2);
+        flow.minimumInteritemSpacing = 0;
+        flow.minimumLineSpacing = 0;
+        flow.itemSize = CGSizeMake(self.width/7, self.width/7);
         
-        _collectionView = [[CalendarCollectionView alloc] initWithFrame:CGRectMake(ScreenWidth/2. - QZMAKEOF6(278)/2., _bgView2.bottom + QZMAKEOF6(5), QZMAKEOF6(278), QZMAKEOF6(40.5)*6) collectionViewLayout:flow];
+//        _collectionView = [[CalendarCollectionView alloc] initWithFrame:CGRectMake(ScreenWidth/2. - QZMAKEOF6(278)/2., _bgView2.bottom + QZMAKEOF6(5), QZMAKEOF6(278), QZMAKEOF6(40.5)*6) collectionViewLayout:flow];
+        _collectionView = [[CalendarCollectionView alloc] initWithFrame:CGRectMake(0, _bgView2.bottom + QZMAKEOF6(5), self.width, self.width/7*6) collectionViewLayout:flow];
         
         __weak typeof(self)weakSelf = self;
         _collectionView.collectionBlock = ^ (CalenderModel *model) {
@@ -161,7 +168,8 @@
 
 - (UIView *)bgView2 {
     if (_bgView2 == nil) {
-        _bgView2 = [[UIView alloc] initWithFrame:CGRectMake(ScreenWidth/2. - QZMAKEOF6(278)/2., _bgView.bottom, QZMAKEOF6(278), QZMAKEOF6(30))];
+//        _bgView2 = [[UIView alloc] initWithFrame:CGRectMake(ScreenWidth/2. - QZMAKEOF6(278)/2., _bgView.bottom, QZMAKEOF6(278), QZMAKEOF6(30))];
+        _bgView2 = [[UIView alloc] initWithFrame:CGRectMake(0, _bgView.bottom, self.width, QZMAKEOF6(30))];
         
         NSArray *arr = @[@"日",@"一",@"二",@"三",@"四",@"五",@"六"];
         
@@ -169,7 +177,7 @@
             UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(_bgView2.width/7. * i, 0, _bgView2.width/7. - 2, _bgView2.height)];
             lab.textAlignment = NSTextAlignmentCenter;
             if (i == 0 || i > 5) {
-                lab.textColor = [UIColor greenColor];
+                lab.textColor = CustomThemeColor;
             }
             lab.text = arr[i];
             [_bgView2 addSubview:lab];
