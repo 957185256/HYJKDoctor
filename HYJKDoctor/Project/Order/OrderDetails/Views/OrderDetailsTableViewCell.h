@@ -10,4 +10,8 @@
 
 @interface OrderDetailsTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) UILabel *lab;
+
+@property (nonatomic, strong) UILabel *value;
+
 @end

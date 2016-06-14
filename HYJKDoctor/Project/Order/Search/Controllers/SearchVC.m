@@ -11,6 +11,7 @@
 #import "SearchTableView.h"
 #import "SearchFooterView.h"
 #import "SearchModel.h"
+#import "OrderDetailsVC.h"
 
 @interface SearchVC ()
 {
@@ -59,7 +60,9 @@
 #pragma mark --- 网络请求
 - (void)getOrderIdlist
 {
-    NSDictionary *params = @{@"doctor_id":@"9",
+    Account *account = [Account getAccount];
+    NSDictionary *dic = account.session;
+    NSDictionary *params = @{@"doctor_id":[NSString stringWithFormat:@"%@",dic[@"doctor_id"]],
                              @"pagination":@{@"page":_page,
                                              @"count":@"100"},
                              @"keywords":_keywords};
@@ -75,6 +78,14 @@
     } Fail:^(id error) {
         [self stopLoadingView];
     }];
+}
+
+#pragma mark --- 跳转
+- (void)gotoOtherController:(SearchOrderModel *)model
+{
+    OrderDetailsVC *vc = [[OrderDetailsVC alloc] init];
+    vc.order_sn = model.order_sn;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark --- gettetr
@@ -98,6 +109,10 @@
     {
         _tableView = [[SearchTableView alloc] initWithFrame:CGRectMake(0, _searchView.bottom, ScreenWidth, ScreenHeight - _searchView.bottom) style:UITableViewStylePlain];
         _tableView.tableFooterView = self.searchFootView;
+        __weak typeof(self) weakSelf = self;
+        _tableView.searchTableViewBlock = ^(SearchOrderModel *model){
+            [weakSelf gotoOtherController:model];
+        };
     }
     return _tableView;
 }

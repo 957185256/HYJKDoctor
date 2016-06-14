@@ -7,8 +7,18 @@
 //
 
 #import "OrderDetailsVC.h"
+#import "OrderDetailsHeadView.h"
+#import "OrderDetailsTableView.h"
+#import "OrderDetailsModel.h"
+#import "OrderDetailsFootView.h"
 
 @interface OrderDetailsVC ()
+
+@property (nonatomic, strong) OrderDetailsHeadView *headView;
+
+@property (nonatomic, strong) OrderDetailsTableView *tableView;
+
+@property (nonatomic, strong) OrderDetailsFootView *footView;
 
 @end
 
@@ -16,7 +26,80 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationItem.title = @"详情";
+    [self initView];
+}
+
+
+- (void)initView
+{
+    [self.view addSubview:self.tableView];
+    [self initData];
+}
+
+- (void)initData
+{
+    [self getOrderDetails];
+}
+
+#pragma mark --- 网络请求
+- (void)getOrderDetails
+{
+    Account *account = [Account getAccount];
+    NSDictionary *dict = account.session;
+    NSDictionary *params = @{@"doctor_id":[NSString stringWithFormat:@"%@",dict[@"doctor_id"]],
+                             @"order_sn":[NSString stringWithFormat:@"%@",@"2016061297780"]};
+    
+    [OrderDetailsModel postOrderDetail:params Succeed:^(id obj) {
+        [_headView initDataWith:obj];
+        _tableView.model = obj;
+        [self endRefresh];
+    } Failed:^(id error) {
+        [self endRefresh];
+    }];
+}
+
+#pragma mark --- 刷新
+- (void)downRefresh
+{
+    [self getOrderDetails];
+}
+
+- (void)endRefresh
+{
+    [_tableView.mj_header endRefreshing];
+}
+
+#pragma mark --- getter
+
+- (OrderDetailsTableView *)tableView
+{
+    if (!_tableView)
+    {
+        _tableView = [[OrderDetailsTableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)  style:UITableViewStylePlain];
+        _tableView.tableHeaderView = self.headView;
+        _tableView.tableFooterView = self.footView;
+        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downRefresh)];
+    }
+    return _tableView;
+}
+
+- (OrderDetailsHeadView *)headView
+{
+    if (!_headView)
+    {
+        _headView = [[OrderDetailsHeadView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, QZMAKEOF6(272))];
+    }
+    return _headView;
+}
+
+- (OrderDetailsFootView *)footView
+{
+    if (!_footView)
+    {
+        _footView = [[OrderDetailsFootView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, QZMAKEOF6(70))];
+    }
+    return _footView;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +107,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class OrderDetailsModel;
 
-@interface OrderDetailsTableView : UITableView
+@interface OrderDetailsTableView : UITableView<UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) OrderDetailsModel *model;
 
 @end

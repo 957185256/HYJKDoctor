@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SearchOrderModel.h"
 
 @interface SearchModel : NSObject
 

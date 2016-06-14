@@ -54,6 +54,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self deselectRowAtIndexPath:indexPath animated:YES];
+    if (_searchTableViewBlock)
+    {
+        SearchOrderModel *model = _dataArr[indexPath.row];
+        _searchTableViewBlock(model);
+    }
 }
 
 @end

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		111973151D0F916900096101 /* OrderDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 111973141D0F916900096101 /* OrderDetailsVC.m */; };
+		111973181D0F919300096101 /* OrderDetailsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 111973171D0F919300096101 /* OrderDetailsTableView.m */; };
+		1119731B1D0F91D400096101 /* OrderDetailsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1119731A1D0F91D400096101 /* OrderDetailsHeadView.m */; };
+		1119731E1D0F9D6C00096101 /* OrderDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1119731D1D0F9D6C00096101 /* OrderDetailsModel.m */; };
+		111973211D0FA7DB00096101 /* OrderDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 111973201D0FA7DB00096101 /* OrderDetailsTableViewCell.m */; };
+		111973241D0FB2D400096101 /* OrderDetailsFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 111973231D0FB2D400096101 /* OrderDetailsFootView.m */; };
 		116137C31D0E5F7B00F67C5B /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 116137B61D0E5F7B00F67C5B /* SearchVC.m */; };
 		116137C41D0E5F7B00F67C5B /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 116137B91D0E5F7B00F67C5B /* SearchModel.m */; };
 		116137C51D0E5F7B00F67C5B /* SearchFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 116137BC1D0E5F7B00F67C5B /* SearchFooterView.m */; };
@@ -98,6 +104,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		111973131D0F916900096101 /* OrderDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailsVC.h; sourceTree = "<group>"; };
+		111973141D0F916900096101 /* OrderDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsVC.m; sourceTree = "<group>"; };
+		111973161D0F919300096101 /* OrderDetailsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailsTableView.h; sourceTree = "<group>"; };
+		111973171D0F919300096101 /* OrderDetailsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsTableView.m; sourceTree = "<group>"; };
+		111973191D0F91D400096101 /* OrderDetailsHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailsHeadView.h; sourceTree = "<group>"; };
+		1119731A1D0F91D400096101 /* OrderDetailsHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsHeadView.m; sourceTree = "<group>"; };
+		1119731C1D0F9D6C00096101 /* OrderDetailsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailsModel.h; sourceTree = "<group>"; };
+		1119731D1D0F9D6C00096101 /* OrderDetailsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsModel.m; sourceTree = "<group>"; };
+		1119731F1D0FA7DB00096101 /* OrderDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailsTableViewCell.h; sourceTree = "<group>"; };
+		111973201D0FA7DB00096101 /* OrderDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsTableViewCell.m; sourceTree = "<group>"; };
+		111973221D0FB2D400096101 /* OrderDetailsFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailsFootView.h; sourceTree = "<group>"; };
+		111973231D0FB2D400096101 /* OrderDetailsFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsFootView.m; sourceTree = "<group>"; };
 		116137B51D0E5F7B00F67C5B /* SearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
 		116137B61D0E5F7B00F67C5B /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
 		116137B81D0E5F7B00F67C5B /* SearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchModel.h; sourceTree = "<group>"; };
@@ -272,6 +290,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1119730F1D0F913C00096101 /* OrderDetails */ = {
+			isa = PBXGroup;
+			children = (
+				111973101D0F913C00096101 /* Controller */,
+				111973111D0F913C00096101 /* Models */,
+				111973121D0F913C00096101 /* Views */,
+			);
+			path = OrderDetails;
+			sourceTree = "<group>";
+		};
+		111973101D0F913C00096101 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				111973131D0F916900096101 /* OrderDetailsVC.h */,
+				111973141D0F916900096101 /* OrderDetailsVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		111973111D0F913C00096101 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1119731C1D0F9D6C00096101 /* OrderDetailsModel.h */,
+				1119731D1D0F9D6C00096101 /* OrderDetailsModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		111973121D0F913C00096101 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				111973161D0F919300096101 /* OrderDetailsTableView.h */,
+				111973171D0F919300096101 /* OrderDetailsTableView.m */,
+				1119731F1D0FA7DB00096101 /* OrderDetailsTableViewCell.h */,
+				111973201D0FA7DB00096101 /* OrderDetailsTableViewCell.m */,
+				111973191D0F91D400096101 /* OrderDetailsHeadView.h */,
+				1119731A1D0F91D400096101 /* OrderDetailsHeadView.m */,
+				111973221D0FB2D400096101 /* OrderDetailsFootView.h */,
+				111973231D0FB2D400096101 /* OrderDetailsFootView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		116137B31D0E5F7B00F67C5B /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,6 +629,7 @@
 		3348C9651CF89A280006514A /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				1119730F1D0F913C00096101 /* OrderDetails */,
 				116137B31D0E5F7B00F67C5B /* Search */,
 				3348C9681CF89A450006514A /* OrderVC.h */,
 				3348C9691CF89A450006514A /* OrderVC.m */,
@@ -968,6 +1030,7 @@
 				3348C8F41CF887FF0006514A /* CATextLayer+SBTextLayer.m in Sources */,
 				3348C9001CF887FF0006514A /* UIView+QZAssociation.m in Sources */,
 				3348C8FC1CF887FF0006514A /* UIAlertView+Fast.m in Sources */,
+				111973181D0F919300096101 /* OrderDetailsTableView.m in Sources */,
 				3348C9CB1CF8AF830006514A /* SystemSetVC.m in Sources */,
 				116137C51D0E5F7B00F67C5B /* SearchFooterView.m in Sources */,
 				116137F21D0E5FCE00F67C5B /* PatentManagerTableViewCell.m in Sources */,
@@ -985,6 +1048,7 @@
 				116137C41D0E5F7B00F67C5B /* SearchModel.m in Sources */,
 				3348C9541CF889560006514A /* Methods.m in Sources */,
 				3348C9BF1CF8AF3D0006514A /* MJSettingCell.m in Sources */,
+				1119731B1D0F91D400096101 /* OrderDetailsHeadView.m in Sources */,
 				3348C8F71CF887FF0006514A /* NSObject+QZAssociation.m in Sources */,
 				3348C96A1CF89A450006514A /* OrderVC.m in Sources */,
 				3348C8D01CF887B90006514A /* RootTabBarVC.m in Sources */,
@@ -998,6 +1062,9 @@
 				8D422FB21CFE762800CF4C84 /* Account.m in Sources */,
 				3348C9B71CF8AF3D0006514A /* MJSettingItem.m in Sources */,
 				3348C8FB1CF887FF0006514A /* UIActionSheet+Fast.m in Sources */,
+				1119731E1D0F9D6C00096101 /* OrderDetailsModel.m in Sources */,
+				111973211D0FA7DB00096101 /* OrderDetailsTableViewCell.m in Sources */,
+				111973151D0F916900096101 /* OrderDetailsVC.m in Sources */,
 				337ADB351CF73F970045291C /* main.m in Sources */,
 				116138001D0E8A2F00F67C5B /* SearchOrderModel.m in Sources */,
 				3348C9C21CF8AF4E0006514A /* FeedBackVC.m in Sources */,
@@ -1010,6 +1077,7 @@
 				116137FD1D0E5FCE00F67C5B /* StatusSetTableView.m in Sources */,
 				3348C8F81CF887FF0006514A /* NSString+QZCategory.m in Sources */,
 				8D422FB51CFE7AA200CF4C84 /* LoginAndRegisterController.m in Sources */,
+				111973241D0FB2D400096101 /* OrderDetailsFootView.m in Sources */,
 				3348C9701CF89A7F0006514A /* MessageCenterVC.m in Sources */,
 				3348C8F61CF887FF0006514A /* NSObject+QZAddForKVO.m in Sources */,
 				3348C9571CF889560006514A /* LewPopupViewAnimationDrop.m in Sources */,

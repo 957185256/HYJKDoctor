@@ -10,4 +10,6 @@
 
 @interface OrderDetailsVC : BaseVC
 
+@property (nonatomic, copy) NSString *order_sn;
+
 @end

@@ -1,4 +1,4 @@
-//
+ //
 //  SearchModel.m
 //  HYJKDoctor
 //
@@ -7,7 +7,6 @@
 //
 
 #import "SearchModel.h"
-#import "SearchOrderModel.h"
 
 @implementation SearchModel
 
@@ -22,6 +21,7 @@
         {
             SearchOrderModel *model = [[SearchOrderModel alloc] init];
             model.order_id = [NSString stringWithFormat:@"%@",dataDict[@"order_id"]];
+            model.order_sn = [NSString stringWithFormat:@"%@",dataDict[@"order_sn"]];
             
             NSString *timeStr = [NSString stringWithFormat:@"%@",dataDict[@"order_time"]];
             NSRange range = [timeStr rangeOfString:@" "];

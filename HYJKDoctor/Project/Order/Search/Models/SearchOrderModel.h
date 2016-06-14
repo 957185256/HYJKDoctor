@@ -16,4 +16,8 @@
 
 @property (nonatomic, copy) NSString *consignee;    // 患者姓名
 
+@property (nonatomic, copy) NSString *doctor_id;    // 医师id
+
+@property (nonatomic, copy) NSString *order_sn;    // 订单编号
+
 @end
