@@ -60,8 +60,6 @@
 		3348C95B1CF889560006514A /* UIViewController+LewPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3348C9401CF889560006514A /* UIViewController+LewPopupViewController.m */; };
 		3348C9601CF88C5D0006514A /* DealWithModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3348C95D1CF88C5D0006514A /* DealWithModel.m */; };
 		3348C9641CF88CEA0006514A /* SSBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3348C9631CF88CEA0006514A /* SSBaseRequest.m */; };
-		3348C96A1CF89A450006514A /* OrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3348C9691CF89A450006514A /* OrderVC.m */; };
-		3348C9701CF89A7F0006514A /* MessageCenterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3348C96F1CF89A7F0006514A /* MessageCenterVC.m */; };
 		3348C9B51CF8AF3D0006514A /* MJSettingGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 3348C99E1CF8AF3D0006514A /* MJSettingGroup.m */; };
 		3348C9B61CF8AF3D0006514A /* MJSettingArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3348C9A11CF8AF3D0006514A /* MJSettingArrowItem.m */; };
 		3348C9B71CF8AF3D0006514A /* MJSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3348C9A31CF8AF3D0006514A /* MJSettingItem.m */; };
@@ -82,9 +80,19 @@
 		337ADB4E1CF73F970045291C /* HYJKDoctorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 337ADB4D1CF73F970045291C /* HYJKDoctorTests.m */; };
 		337ADB591CF73F970045291C /* HYJKDoctorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 337ADB581CF73F970045291C /* HYJKDoctorUITests.m */; };
 		6B459203B677FF67CA35812E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9141088EF7671EBD3C1C3A4 /* libPods.a */; };
-		8D422FB21CFE762800CF4C84 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D422FB11CFE762800CF4C84 /* Account.m */; };
-		8D422FB51CFE7AA200CF4C84 /* LoginAndRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D422FB41CFE7AA200CF4C84 /* LoginAndRegisterController.m */; };
-		8D59D0AA1D06A8A200A722B9 /* AFManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D59D0A91D06A8A200A722B9 /* AFManager.m */; };
+		8DB0C9581D10E9A8000690BF /* PhotoTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0C9551D10E9A8000690BF /* PhotoTools.m */; };
+		8DB0C9591D10E9A8000690BF /* TelTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0C9571D10E9A8000690BF /* TelTools.m */; };
+		8DB0C9621D10E9FA000690BF /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0C95C1D10E9FA000690BF /* OrderCell.m */; };
+		8DB0C9631D10E9FA000690BF /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB0C95D1D10E9FA000690BF /* OrderCell.xib */; };
+		8DB0C9641D10E9FA000690BF /* OrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0C95F1D10E9FA000690BF /* OrderVC.m */; };
+		8DB0C9651D10E9FA000690BF /* TitleSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0C9611D10E9FA000690BF /* TitleSwitch.m */; };
+		8DB0C97C1D10EA4B000690BF /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0C9751D10EA4B000690BF /* Account.m */; };
+		8DB0C97D1D10EA4B000690BF /* LoginAndRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0C9771D10EA4B000690BF /* LoginAndRegisterController.m */; };
+		8DB0C97E1D10EA4B000690BF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0C9791D10EA4B000690BF /* LoginViewController.m */; };
+		8DB0C97F1D10EA4B000690BF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0C97B1D10EA4B000690BF /* RegisterViewController.m */; };
+		8DB0C9821D10EA66000690BF /* AFManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0C9811D10EA66000690BF /* AFManager.m */; };
+		8DB0C9861D10EA89000690BF /* MessageCenterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0C9851D10EA89000690BF /* MessageCenterVC.m */; };
+		8DB0C9891D10EB92000690BF /* UIAlertController+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0C9881D10EB92000690BF /* UIAlertController+extend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,10 +220,6 @@
 		3348C95D1CF88C5D0006514A /* DealWithModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealWithModel.m; sourceTree = "<group>"; };
 		3348C9621CF88CEA0006514A /* SSBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBaseRequest.h; sourceTree = "<group>"; };
 		3348C9631CF88CEA0006514A /* SSBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBaseRequest.m; sourceTree = "<group>"; };
-		3348C9681CF89A450006514A /* OrderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderVC.h; sourceTree = "<group>"; };
-		3348C9691CF89A450006514A /* OrderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderVC.m; sourceTree = "<group>"; };
-		3348C96E1CF89A7F0006514A /* MessageCenterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCenterVC.h; sourceTree = "<group>"; };
-		3348C96F1CF89A7F0006514A /* MessageCenterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCenterVC.m; sourceTree = "<group>"; };
 		3348C99D1CF8AF3D0006514A /* MJSettingGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSettingGroup.h; sourceTree = "<group>"; };
 		3348C99E1CF8AF3D0006514A /* MJSettingGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSettingGroup.m; sourceTree = "<group>"; };
 		3348C9A01CF8AF3D0006514A /* MJSettingArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSettingArrowItem.h; sourceTree = "<group>"; };
@@ -256,12 +260,31 @@
 		337ADB581CF73F970045291C /* HYJKDoctorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYJKDoctorUITests.m; sourceTree = "<group>"; };
 		337ADB5A1CF73F970045291C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		337ADB661CF73FF70045291C /* HYJKDoctor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HYJKDoctor-Prefix.pch"; sourceTree = "<group>"; };
-		8D422FB01CFE762800CF4C84 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
-		8D422FB11CFE762800CF4C84 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
-		8D422FB31CFE7AA200CF4C84 /* LoginAndRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegisterController.h; sourceTree = "<group>"; };
-		8D422FB41CFE7AA200CF4C84 /* LoginAndRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegisterController.m; sourceTree = "<group>"; };
-		8D59D0A81D06A8A200A722B9 /* AFManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFManager.h; path = ../Project/Login/AFManager.h; sourceTree = "<group>"; };
-		8D59D0A91D06A8A200A722B9 /* AFManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFManager.m; path = ../Project/Login/AFManager.m; sourceTree = "<group>"; };
+		8DB0C9541D10E9A8000690BF /* PhotoTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoTools.h; sourceTree = "<group>"; };
+		8DB0C9551D10E9A8000690BF /* PhotoTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoTools.m; sourceTree = "<group>"; };
+		8DB0C9561D10E9A8000690BF /* TelTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelTools.h; sourceTree = "<group>"; };
+		8DB0C9571D10E9A8000690BF /* TelTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelTools.m; sourceTree = "<group>"; };
+		8DB0C95B1D10E9FA000690BF /* OrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderCell.h; sourceTree = "<group>"; };
+		8DB0C95C1D10E9FA000690BF /* OrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderCell.m; sourceTree = "<group>"; };
+		8DB0C95D1D10E9FA000690BF /* OrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
+		8DB0C95E1D10E9FA000690BF /* OrderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderVC.h; sourceTree = "<group>"; };
+		8DB0C95F1D10E9FA000690BF /* OrderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderVC.m; sourceTree = "<group>"; };
+		8DB0C9601D10E9FA000690BF /* TitleSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleSwitch.h; sourceTree = "<group>"; };
+		8DB0C9611D10E9FA000690BF /* TitleSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleSwitch.m; sourceTree = "<group>"; };
+		8DB0C9741D10EA4B000690BF /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		8DB0C9751D10EA4B000690BF /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		8DB0C9761D10EA4B000690BF /* LoginAndRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegisterController.h; sourceTree = "<group>"; };
+		8DB0C9771D10EA4B000690BF /* LoginAndRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegisterController.m; sourceTree = "<group>"; };
+		8DB0C9781D10EA4B000690BF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		8DB0C9791D10EA4B000690BF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		8DB0C97A1D10EA4B000690BF /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		8DB0C97B1D10EA4B000690BF /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		8DB0C9801D10EA66000690BF /* AFManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFManager.h; sourceTree = "<group>"; };
+		8DB0C9811D10EA66000690BF /* AFManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFManager.m; sourceTree = "<group>"; };
+		8DB0C9841D10EA89000690BF /* MessageCenterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCenterVC.h; sourceTree = "<group>"; };
+		8DB0C9851D10EA89000690BF /* MessageCenterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCenterVC.m; sourceTree = "<group>"; };
+		8DB0C9871D10EB92000690BF /* UIAlertController+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+extend.h"; sourceTree = "<group>"; };
+		8DB0C9881D10EB92000690BF /* UIAlertController+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+extend.m"; sourceTree = "<group>"; };
 		A87FB81A4CFDD93D7153A530 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A9141088EF7671EBD3C1C3A4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46384E2E57B08F57924AF0D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -501,10 +524,10 @@
 		3348C8CC1CF886110006514A /* Project */ = {
 			isa = PBXGroup;
 			children = (
-				8D422FAF1CFE761800CF4C84 /* Login */,
+				8DB0C9831D10EA89000690BF /* MessageCenter */,
+				8DB0C9731D10EA4B000690BF /* Login */,
 				3348C9651CF89A280006514A /* Order */,
 				3348C9661CF89A280006514A /* MyCenter */,
-				3348C9671CF89A280006514A /* MessageCenter */,
 				3348C8CD1CF886110006514A /* Base */,
 			);
 			path = Project;
@@ -555,6 +578,8 @@
 		3348C8E31CF887FE0006514A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8DB0C9871D10EB92000690BF /* UIAlertController+extend.h */,
+				8DB0C9881D10EB92000690BF /* UIAlertController+extend.m */,
 				3348C8E41CF887FE0006514A /* CustomIOS7AlertView.h */,
 				3348C8E51CF887FE0006514A /* CustomIOS7AlertView.m */,
 				3348C8E61CF887FE0006514A /* UIActionSheet+Fast.h */,
@@ -578,8 +603,7 @@
 		3348C9021CF889550006514A /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				8D59D0A81D06A8A200A722B9 /* AFManager.h */,
-				8D59D0A91D06A8A200A722B9 /* AFManager.m */,
+				8DB0C9531D10E9A8000690BF /* OtherTools */,
 				3348C9031CF889550006514A /* AFHTTPS */,
 				3348C92E1CF889560006514A /* FastMethods */,
 				3348C9331CF889560006514A /* popupViewController */,
@@ -590,6 +614,8 @@
 		3348C9031CF889550006514A /* AFHTTPS */ = {
 			isa = PBXGroup;
 			children = (
+				8DB0C9801D10EA66000690BF /* AFManager.h */,
+				8DB0C9811D10EA66000690BF /* AFManager.m */,
 				3348C9041CF889550006514A /* AFClient.h */,
 				3348C9051CF889550006514A /* AFClient.m */,
 				3348C9621CF88CEA0006514A /* SSBaseRequest.h */,
@@ -634,10 +660,9 @@
 		3348C9651CF89A280006514A /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				8DB0C95A1D10E9FA000690BF /* Order */,
 				1119730F1D0F913C00096101 /* OrderDetails */,
 				116137B31D0E5F7B00F67C5B /* Search */,
-				3348C9681CF89A450006514A /* OrderVC.h */,
-				3348C9691CF89A450006514A /* OrderVC.m */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -652,15 +677,6 @@
 				3348C9991CF8AF3D0006514A /* SystemSet */,
 			);
 			path = MyCenter;
-			sourceTree = "<group>";
-		};
-		3348C9671CF89A280006514A /* MessageCenter */ = {
-			isa = PBXGroup;
-			children = (
-				3348C96E1CF89A7F0006514A /* MessageCenterVC.h */,
-				3348C96F1CF89A7F0006514A /* MessageCenterVC.m */,
-			);
-			path = MessageCenter;
 			sourceTree = "<group>";
 		};
 		3348C9961CF8AF3D0006514A /* FeedBack */ = {
@@ -816,15 +832,53 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		8D422FAF1CFE761800CF4C84 /* Login */ = {
+		8DB0C9531D10E9A8000690BF /* OtherTools */ = {
 			isa = PBXGroup;
 			children = (
-				8D422FB01CFE762800CF4C84 /* Account.h */,
-				8D422FB11CFE762800CF4C84 /* Account.m */,
-				8D422FB31CFE7AA200CF4C84 /* LoginAndRegisterController.h */,
-				8D422FB41CFE7AA200CF4C84 /* LoginAndRegisterController.m */,
+				8DB0C9541D10E9A8000690BF /* PhotoTools.h */,
+				8DB0C9551D10E9A8000690BF /* PhotoTools.m */,
+				8DB0C9561D10E9A8000690BF /* TelTools.h */,
+				8DB0C9571D10E9A8000690BF /* TelTools.m */,
+			);
+			path = OtherTools;
+			sourceTree = "<group>";
+		};
+		8DB0C95A1D10E9FA000690BF /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				8DB0C95B1D10E9FA000690BF /* OrderCell.h */,
+				8DB0C95C1D10E9FA000690BF /* OrderCell.m */,
+				8DB0C95D1D10E9FA000690BF /* OrderCell.xib */,
+				8DB0C95E1D10E9FA000690BF /* OrderVC.h */,
+				8DB0C95F1D10E9FA000690BF /* OrderVC.m */,
+				8DB0C9601D10E9FA000690BF /* TitleSwitch.h */,
+				8DB0C9611D10E9FA000690BF /* TitleSwitch.m */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		8DB0C9731D10EA4B000690BF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8DB0C9741D10EA4B000690BF /* Account.h */,
+				8DB0C9751D10EA4B000690BF /* Account.m */,
+				8DB0C9761D10EA4B000690BF /* LoginAndRegisterController.h */,
+				8DB0C9771D10EA4B000690BF /* LoginAndRegisterController.m */,
+				8DB0C9781D10EA4B000690BF /* LoginViewController.h */,
+				8DB0C9791D10EA4B000690BF /* LoginViewController.m */,
+				8DB0C97A1D10EA4B000690BF /* RegisterViewController.h */,
+				8DB0C97B1D10EA4B000690BF /* RegisterViewController.m */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		8DB0C9831D10EA89000690BF /* MessageCenter */ = {
+			isa = PBXGroup;
+			children = (
+				8DB0C9841D10EA89000690BF /* MessageCenterVC.h */,
+				8DB0C9851D10EA89000690BF /* MessageCenterVC.m */,
+			);
+			path = MessageCenter;
 			sourceTree = "<group>";
 		};
 		D138C1A7C21DDD2FF275D566 /* Frameworks */ = {
@@ -944,6 +998,7 @@
 			files = (
 				337ADB431CF73F970045291C /* LaunchScreen.storyboard in Resources */,
 				337ADB401CF73F970045291C /* Assets.xcassets in Resources */,
+				8DB0C9631D10E9FA000690BF /* OrderCell.xib in Resources */,
 				116137FB1D0E5FCE00F67C5B /* CalenderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1017,11 +1072,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DB0C97D1D10EA4B000690BF /* LoginAndRegisterController.m in Sources */,
 				3348C9B91CF8AF3D0006514A /* MJSettingLabelItem.m in Sources */,
 				111973271D0FDB2D00096101 /* StatusSetFootView.m in Sources */,
 				3348C8FA1CF887FF0006514A /* CustomIOS7AlertView.m in Sources */,
 				116137F11D0E5FCE00F67C5B /* PatentManagerTableView.m in Sources */,
 				3348C8F51CF887FF0006514A /* NSDate+QZCategory.m in Sources */,
+				8DB0C9641D10E9FA000690BF /* OrderVC.m in Sources */,
 				116137F91D0E5FCE00F67C5B /* CalendarHeadView.m in Sources */,
 				3348C9591CF889560006514A /* LewPopupViewAnimationSlide.m in Sources */,
 				3348C9BB1CF8AF3D0006514A /* MJSettingSwitchItem.m in Sources */,
@@ -1029,11 +1086,13 @@
 				116137F61D0E5FCE00F67C5B /* NSDate+CTCategory.m in Sources */,
 				3348C9561CF889560006514A /* LewPopupBackgroundView.m in Sources */,
 				3348C9B61CF8AF3D0006514A /* MJSettingArrowItem.m in Sources */,
+				8DB0C9891D10EB92000690BF /* UIAlertController+extend.m in Sources */,
 				3348C9BE1CF8AF3D0006514A /* MineHeaderView.m in Sources */,
 				116137F31D0E5FCE00F67C5B /* StatusSetVC.m in Sources */,
 				116137C61D0E5F7B00F67C5B /* SearchTableView.m in Sources */,
 				337ADB381CF73F970045291C /* AppDelegate.m in Sources */,
 				3348C8F41CF887FF0006514A /* CATextLayer+SBTextLayer.m in Sources */,
+				8DB0C9591D10E9A8000690BF /* TelTools.m in Sources */,
 				3348C9001CF887FF0006514A /* UIView+QZAssociation.m in Sources */,
 				3348C8FC1CF887FF0006514A /* UIAlertView+Fast.m in Sources */,
 				111973181D0F919300096101 /* OrderDetailsTableView.m in Sources */,
@@ -1045,18 +1104,20 @@
 				3348C9581CF889560006514A /* LewPopupViewAnimationFade.m in Sources */,
 				116138031D0E981D00F67C5B /* CTCache.m in Sources */,
 				116137FA1D0E5FCE00F67C5B /* CalenderCell.m in Sources */,
+				8DB0C9651D10E9FA000690BF /* TitleSwitch.m in Sources */,
 				3348C9BC1CF8AF3D0006514A /* MyCenterVC.m in Sources */,
 				116137F81D0E5FCE00F67C5B /* CalendarCollectionView.m in Sources */,
+				8DB0C97C1D10EA4B000690BF /* Account.m in Sources */,
 				116137F71D0E5FCE00F67C5B /* CalenderModel.m in Sources */,
 				3348C9641CF88CEA0006514A /* SSBaseRequest.m in Sources */,
 				116137C31D0E5F7B00F67C5B /* SearchVC.m in Sources */,
 				3348C9601CF88C5D0006514A /* DealWithModel.m in Sources */,
+				8DB0C9861D10EA89000690BF /* MessageCenterVC.m in Sources */,
 				116137C41D0E5F7B00F67C5B /* SearchModel.m in Sources */,
 				3348C9541CF889560006514A /* Methods.m in Sources */,
 				3348C9BF1CF8AF3D0006514A /* MJSettingCell.m in Sources */,
 				1119731B1D0F91D400096101 /* OrderDetailsHeadView.m in Sources */,
 				3348C8F71CF887FF0006514A /* NSObject+QZAssociation.m in Sources */,
-				3348C96A1CF89A450006514A /* OrderVC.m in Sources */,
 				3348C8D01CF887B90006514A /* RootTabBarVC.m in Sources */,
 				3348C9011CF887FF0006514A /* UIViewExt.m in Sources */,
 				3348C95B1CF889560006514A /* UIViewController+LewPopupViewController.m in Sources */,
@@ -1065,26 +1126,27 @@
 				3348C8FF1CF887FF0006514A /* UIView+Extend.m in Sources */,
 				3348C9BA1CF8AF3D0006514A /* MJSettingLogoutItem.m in Sources */,
 				3348C8D31CF887C60006514A /* BaseVC.m in Sources */,
-				8D422FB21CFE762800CF4C84 /* Account.m in Sources */,
 				3348C9B71CF8AF3D0006514A /* MJSettingItem.m in Sources */,
+				8DB0C97E1D10EA4B000690BF /* LoginViewController.m in Sources */,
 				3348C8FB1CF887FF0006514A /* UIActionSheet+Fast.m in Sources */,
 				1119731E1D0F9D6C00096101 /* OrderDetailsModel.m in Sources */,
 				111973211D0FA7DB00096101 /* OrderDetailsTableViewCell.m in Sources */,
+				8DB0C9621D10E9FA000690BF /* OrderCell.m in Sources */,
 				111973151D0F916900096101 /* OrderDetailsVC.m in Sources */,
 				337ADB351CF73F970045291C /* main.m in Sources */,
 				116138001D0E8A2F00F67C5B /* SearchOrderModel.m in Sources */,
+				8DB0C97F1D10EA4B000690BF /* RegisterViewController.m in Sources */,
+				8DB0C9581D10E9A8000690BF /* PhotoTools.m in Sources */,
 				3348C9C21CF8AF4E0006514A /* FeedBackVC.m in Sources */,
 				3348C95A1CF889560006514A /* LewPopupViewAnimationSpring.m in Sources */,
 				3348C9B51CF8AF3D0006514A /* MJSettingGroup.m in Sources */,
+				8DB0C9821D10EA66000690BF /* AFManager.m in Sources */,
 				3348C8F91CF887FF0006514A /* UIColor+QZCategory.m in Sources */,
 				3348C9BD1CF8AF3D0006514A /* SSBaseSettingViewController.m in Sources */,
 				3348C8FD1CF887FF0006514A /* UIImage+Color.m in Sources */,
-				8D59D0AA1D06A8A200A722B9 /* AFManager.m in Sources */,
 				116137FD1D0E5FCE00F67C5B /* StatusSetTableView.m in Sources */,
 				3348C8F81CF887FF0006514A /* NSString+QZCategory.m in Sources */,
-				8D422FB51CFE7AA200CF4C84 /* LoginAndRegisterController.m in Sources */,
 				111973241D0FB2D400096101 /* OrderDetailsFootView.m in Sources */,
-				3348C9701CF89A7F0006514A /* MessageCenterVC.m in Sources */,
 				3348C8F61CF887FF0006514A /* NSObject+QZAddForKVO.m in Sources */,
 				3348C9571CF889560006514A /* LewPopupViewAnimationDrop.m in Sources */,
 				116137F01D0E5FCE00F67C5B /* PatentManagerVC.m in Sources */,

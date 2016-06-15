@@ -402,4 +402,78 @@
     bolang.image = [UIImage imageNamed:@"all_windowline"];
     return bolang;
 }
-@end 
+@end
+
+
+// 无网络 或者无数据
+#import <objc/runtime.h>
+
+@interface UIView()
+
+@property (nonatomic,weak) UIImageView *nodataView;
+
+@end
+
+@implementation UIView (nodata)
+
+
+static char nodataKey,blockKey;
+
+- (void)setNodataView:(UIImageView *)nodataView
+{
+    objc_setAssociatedObject(self, &nodataKey, nodataView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIImageView *)nodataView
+{
+    return objc_getAssociatedObject(self, &nodataKey);
+}
+
+
+
+- (void)setNodataViewWithImageName:(NSString *)imageName
+{
+    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height)];
+    view.backgroundColor = [UIColor whiteColor];
+    view.image = [UIImage imageNamed:imageName];
+    view.contentMode = UIViewContentModeCenter;
+    [self addSubview:view];
+    self.nodataView = view;
+    
+    
+    view.userInteractionEnabled = YES;
+    
+    
+    [view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(nodataViewClick)]];
+}
+
+- (void)removeNodataView
+{
+    if (self.nodataView) {
+        [self.nodataView removeFromSuperview];
+        self.nodataView = nil;
+    }
+}
+
+- (void)nodataViewClick
+{
+    
+    [self removeNodataView];
+    if (self.nodataBlock) {
+        self.nodataBlock();
+    }
+}
+
+- (void)setNodataBlock:(void (^)())nodataBlock
+{
+    objc_setAssociatedObject(self, &blockKey, nodataBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void (^)())nodataBlock
+{
+    return objc_getAssociatedObject(self, &blockKey);
+}
+
+
+@end
+

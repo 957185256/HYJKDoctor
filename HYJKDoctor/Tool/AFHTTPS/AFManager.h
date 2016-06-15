@@ -21,4 +21,12 @@
  */
 + (void)postWithPath:(NSString *)path params:(NSDictionary *)params succeed:(void(^)(NSDictionary *responsedict))succeed failed:(void(^)(NSError *error))failed;
 
+
+/**
+ *  判断请求结果是否成功 如果失败弹出错误提示
+ *
+ *  @param responsedict 请求结果
+ */
++ (BOOL)isRequsetSucceed:(NSDictionary *)responsedict;
+
 @end

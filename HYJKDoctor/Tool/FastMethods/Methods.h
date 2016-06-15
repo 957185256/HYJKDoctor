@@ -86,7 +86,8 @@
 +(void)showOverlay:(NSString*)str
            Options:(TAOverlayOptions)newOptions;
 
-
+// toast提示
++ (MBProgressHUD *)showToast:(NSString *)text inSuperview:(UIView *)view;
 
 //弹出提示框1
 +(void)alertViewWithTitle:(NSString*)title

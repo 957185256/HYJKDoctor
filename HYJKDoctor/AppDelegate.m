@@ -39,14 +39,16 @@
     self.rootTab=[[RootTabBarVC alloc]init];
     [UIApplication sharedApplication].keyWindow.rootViewController = appDelegate.rootTab;
     
-    // 如果本地获取不到账户信息 来到注册登录界面
-//    Account *account = [Account getAccount];
-//    if (!account) {
-//        LoginAndRegisterController *controller = [[LoginAndRegisterController alloc] init];
-//        [self.rootTab presentViewController:controller animated:YES completion:nil];
-//    }
-    LoginAndRegisterController *controller = [[LoginAndRegisterController alloc] init];
-    [self.rootTab presentViewController:controller animated:YES completion:nil];
+    //   如果本地获取不到账户信息 来到注册登录界面
+    Account *account = [Account getAccount];
+    if (!account) {
+        LoginAndRegisterController *controller = [[LoginAndRegisterController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] init];
+        [nav pushViewController:controller animated:NO];
+        [self.rootTab presentViewController:nav animated:YES completion:nil];
+    }
+    
+
     
     return YES;
 }

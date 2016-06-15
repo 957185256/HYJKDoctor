@@ -74,9 +74,25 @@
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failed) {
+            [Methods showToast:@"请检查网络" inSuperview:[UIApplication sharedApplication].keyWindow];
+            failed(error);
             failed(error);
         }
     }];
 }
+
++ (BOOL)isRequsetSucceed:(NSDictionary *)responsedict
+{
+    NSString *succeed = [NSString stringWithFormat:@"%@",responsedict[@"status"][@"succeed"]];
+    if ([succeed isEqualToString:@"1"]) {
+        return YES;
+    }
+    
+    NSString *error = responsedict[@"status"][@"error_desc"];
+    [Methods showToast:error inSuperview:[UIApplication sharedApplication].keyWindow];
+    return NO;
+}
+
+
 
 @end

@@ -121,4 +121,16 @@
 @end
 
 
+// 无网络 或者无数据
+@interface UIView (nodata)
+
+
+@property (nonatomic,strong) void(^nodataBlock)();
+
+- (void)setNodataViewWithImageName:(NSString *)imageName;
+
+- (void)removeNodataView;
+
+@end
+
 

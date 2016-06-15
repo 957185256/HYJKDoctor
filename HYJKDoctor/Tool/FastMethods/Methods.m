@@ -487,6 +487,24 @@ Options:(TAOverlayOptions)newOptions{
     [TAOverlay showOverlayWithLabel:str  Options:option];
     
 }
+
+//显示Toast提示
++ (MBProgressHUD *)showToast:(NSString *)text inSuperview:(UIView *)view
+{
+    MBProgressHUD *hUD= [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hUD.mode = MBProgressHUDModeText;
+    hUD.labelText = text;
+    hUD.labelFont=[UIFont boldSystemFontOfSize:13];
+    hUD.margin = 10.f; // 边缘
+    hUD.cornerRadius=5.f;
+    hUD.color = [UIColor colorWithRed:0/255.f green:0/255.f blue:0/255.f alpha:0.80];
+    hUD.removeFromSuperViewOnHide = YES;
+    hUD.userInteractionEnabled = NO;
+    [hUD hide:YES afterDelay:1];
+    
+    return hUD;
+}
+
 #pragma -mark 提示框1
 +(void)alertViewWithTitle:(NSString*)title
 contentText:(NSString*)contStr

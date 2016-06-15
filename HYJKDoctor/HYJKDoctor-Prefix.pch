@@ -10,6 +10,7 @@
 #define HYJKDoctor_Prefix_pch
 
 
+#import "BaseVC.h"
 #import <Masonry.h>
 #import "Methods.h"
 #import "Header.h"
