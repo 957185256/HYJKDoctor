@@ -98,7 +98,7 @@
 
 - (void)forgetPassword
 {
-    [TelTools callNumber:@"10086" inView:self.view];
+    [TelTools callNumber:@"4009655525" inView:self.view];
 }
 - (void)login
 {

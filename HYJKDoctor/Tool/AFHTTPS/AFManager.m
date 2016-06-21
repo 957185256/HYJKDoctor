@@ -84,13 +84,12 @@
 + (BOOL)isRequsetSucceed:(NSDictionary *)responsedict
 {
     NSString *succeed = [NSString stringWithFormat:@"%@",responsedict[@"status"][@"succeed"]];
-    if ([succeed isEqualToString:@"1"]) {
-        return YES;
+    if ([succeed isEqualToString:@"0"]) {
+        NSString *error = responsedict[@"status"][@"error_desc"];
+        [Methods showToast:error inSuperview:[UIApplication sharedApplication].keyWindow];
+        return NO;
     }
-    
-    NSString *error = responsedict[@"status"][@"error_desc"];
-    [Methods showToast:error inSuperview:[UIApplication sharedApplication].keyWindow];
-    return NO;
+    return YES;
 }
 
 

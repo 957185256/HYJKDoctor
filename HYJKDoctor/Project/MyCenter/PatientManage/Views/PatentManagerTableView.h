@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PatientCaseModel;
 
 @interface PatentManagerTableView : UITableView<UITableViewDataSource, UITableViewDelegate>
+
+
+@property (nonatomic,strong) void(^selectBlock)(PatientCaseModel *);
 
 @end

@@ -80,6 +80,12 @@
 		337ADB4E1CF73F970045291C /* HYJKDoctorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 337ADB4D1CF73F970045291C /* HYJKDoctorTests.m */; };
 		337ADB591CF73F970045291C /* HYJKDoctorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 337ADB581CF73F970045291C /* HYJKDoctorUITests.m */; };
 		6B459203B677FF67CA35812E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9141088EF7671EBD3C1C3A4 /* libPods.a */; };
+		8D946B981D18D10F00FA4F41 /* PatientCaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D946B971D18D10F00FA4F41 /* PatientCaseController.m */; };
+		8D946B9B1D18D11C00FA4F41 /* PatientCaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D946B9A1D18D11C00FA4F41 /* PatientCaseModel.m */; };
+		8D946BA11D18D19C00FA4F41 /* ChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D946BA01D18D19C00FA4F41 /* ChooseView.m */; };
+		8D946BA41D18D23D00FA4F41 /* DescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D946BA31D18D23D00FA4F41 /* DescriptionCell.m */; };
+		8D946BA71D18D26000FA4F41 /* MedicalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D946BA61D18D26000FA4F41 /* MedicalCell.m */; };
+		8D946BAB1D18DAE100FA4F41 /* ChangePassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D946BAA1D18DAE100FA4F41 /* ChangePassController.m */; };
 		8DB0C9581D10E9A8000690BF /* PhotoTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0C9551D10E9A8000690BF /* PhotoTools.m */; };
 		8DB0C9591D10E9A8000690BF /* TelTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0C9571D10E9A8000690BF /* TelTools.m */; };
 		8DB0C9621D10E9FA000690BF /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0C95C1D10E9FA000690BF /* OrderCell.m */; };
@@ -260,6 +266,18 @@
 		337ADB581CF73F970045291C /* HYJKDoctorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYJKDoctorUITests.m; sourceTree = "<group>"; };
 		337ADB5A1CF73F970045291C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		337ADB661CF73FF70045291C /* HYJKDoctor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HYJKDoctor-Prefix.pch"; sourceTree = "<group>"; };
+		8D946B961D18D10F00FA4F41 /* PatientCaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientCaseController.h; sourceTree = "<group>"; };
+		8D946B971D18D10F00FA4F41 /* PatientCaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientCaseController.m; sourceTree = "<group>"; };
+		8D946B991D18D11C00FA4F41 /* PatientCaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PatientCaseModel.h; path = "../../../../../../hyjk1/HYJKCode/HongYihealth/LoginAndRegist(注册和登录)/Model/PatientCaseModel.h"; sourceTree = "<group>"; };
+		8D946B9A1D18D11C00FA4F41 /* PatientCaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PatientCaseModel.m; path = "../../../../../../hyjk1/HYJKCode/HongYihealth/LoginAndRegist(注册和登录)/Model/PatientCaseModel.m"; sourceTree = "<group>"; };
+		8D946B9F1D18D19C00FA4F41 /* ChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseView.h; sourceTree = "<group>"; };
+		8D946BA01D18D19C00FA4F41 /* ChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseView.m; sourceTree = "<group>"; };
+		8D946BA21D18D23D00FA4F41 /* DescriptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionCell.h; sourceTree = "<group>"; };
+		8D946BA31D18D23D00FA4F41 /* DescriptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionCell.m; sourceTree = "<group>"; };
+		8D946BA51D18D26000FA4F41 /* MedicalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalCell.h; sourceTree = "<group>"; };
+		8D946BA61D18D26000FA4F41 /* MedicalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalCell.m; sourceTree = "<group>"; };
+		8D946BA91D18DAE100FA4F41 /* ChangePassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePassController.h; sourceTree = "<group>"; };
+		8D946BAA1D18DAE100FA4F41 /* ChangePassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePassController.m; sourceTree = "<group>"; };
 		8DB0C9541D10E9A8000690BF /* PhotoTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoTools.h; sourceTree = "<group>"; };
 		8DB0C9551D10E9A8000690BF /* PhotoTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoTools.m; sourceTree = "<group>"; };
 		8DB0C9561D10E9A8000690BF /* TelTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelTools.h; sourceTree = "<group>"; };
@@ -417,6 +435,8 @@
 		116137CA1D0E5FCE00F67C5B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8D946B961D18D10F00FA4F41 /* PatientCaseController.h */,
+				8D946B971D18D10F00FA4F41 /* PatientCaseController.m */,
 				116137CB1D0E5FCE00F67C5B /* PatentManagerVC.h */,
 				116137CC1D0E5FCE00F67C5B /* PatentManagerVC.m */,
 			);
@@ -426,6 +446,8 @@
 		116137CD1D0E5FCE00F67C5B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8D946B991D18D11C00FA4F41 /* PatientCaseModel.h */,
+				8D946B9A1D18D11C00FA4F41 /* PatientCaseModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -433,6 +455,12 @@
 		116137CE1D0E5FCE00F67C5B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8D946BA51D18D26000FA4F41 /* MedicalCell.h */,
+				8D946BA61D18D26000FA4F41 /* MedicalCell.m */,
+				8D946BA21D18D23D00FA4F41 /* DescriptionCell.h */,
+				8D946BA31D18D23D00FA4F41 /* DescriptionCell.m */,
+				8D946B9F1D18D19C00FA4F41 /* ChooseView.h */,
+				8D946BA01D18D19C00FA4F41 /* ChooseView.m */,
 				116137CF1D0E5FCE00F67C5B /* PatentManagerTableView.h */,
 				116137D01D0E5FCE00F67C5B /* PatentManagerTableView.m */,
 				116137D11D0E5FCE00F67C5B /* PatentManagerTableViewCell.h */,
@@ -670,6 +698,7 @@
 		3348C9661CF89A280006514A /* MyCenter */ = {
 			isa = PBXGroup;
 			children = (
+				8D946BA81D18DACE00FA4F41 /* ChangePass */,
 				116137C91D0E5FCE00F67C5B /* PatientManage */,
 				116137D31D0E5FCE00F67C5B /* StatusSet */,
 				3348C99A1CF8AF3D0006514A /* CenterHome */,
@@ -830,6 +859,15 @@
 				C46384E2E57B08F57924AF0D /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8D946BA81D18DACE00FA4F41 /* ChangePass */ = {
+			isa = PBXGroup;
+			children = (
+				8D946BA91D18DAE100FA4F41 /* ChangePassController.h */,
+				8D946BAA1D18DAE100FA4F41 /* ChangePassController.m */,
+			);
+			path = ChangePass;
 			sourceTree = "<group>";
 		};
 		8DB0C9531D10E9A8000690BF /* OtherTools */ = {
@@ -1079,7 +1117,9 @@
 				116137F11D0E5FCE00F67C5B /* PatentManagerTableView.m in Sources */,
 				3348C8F51CF887FF0006514A /* NSDate+QZCategory.m in Sources */,
 				8DB0C9641D10E9FA000690BF /* OrderVC.m in Sources */,
+				8D946B981D18D10F00FA4F41 /* PatientCaseController.m in Sources */,
 				116137F91D0E5FCE00F67C5B /* CalendarHeadView.m in Sources */,
+				8D946BA11D18D19C00FA4F41 /* ChooseView.m in Sources */,
 				3348C9591CF889560006514A /* LewPopupViewAnimationSlide.m in Sources */,
 				3348C9BB1CF8AF3D0006514A /* MJSettingSwitchItem.m in Sources */,
 				116137C71D0E5F7B00F67C5B /* SearchTableViewCell.m in Sources */,
@@ -1093,6 +1133,7 @@
 				337ADB381CF73F970045291C /* AppDelegate.m in Sources */,
 				3348C8F41CF887FF0006514A /* CATextLayer+SBTextLayer.m in Sources */,
 				8DB0C9591D10E9A8000690BF /* TelTools.m in Sources */,
+				8D946BA41D18D23D00FA4F41 /* DescriptionCell.m in Sources */,
 				3348C9001CF887FF0006514A /* UIView+QZAssociation.m in Sources */,
 				3348C8FC1CF887FF0006514A /* UIAlertView+Fast.m in Sources */,
 				111973181D0F919300096101 /* OrderDetailsTableView.m in Sources */,
@@ -1103,6 +1144,7 @@
 				3348C9551CF889560006514A /* UISetUp.m in Sources */,
 				3348C9581CF889560006514A /* LewPopupViewAnimationFade.m in Sources */,
 				116138031D0E981D00F67C5B /* CTCache.m in Sources */,
+				8D946BAB1D18DAE100FA4F41 /* ChangePassController.m in Sources */,
 				116137FA1D0E5FCE00F67C5B /* CalenderCell.m in Sources */,
 				8DB0C9651D10E9FA000690BF /* TitleSwitch.m in Sources */,
 				3348C9BC1CF8AF3D0006514A /* MyCenterVC.m in Sources */,
@@ -1126,6 +1168,7 @@
 				3348C8FF1CF887FF0006514A /* UIView+Extend.m in Sources */,
 				3348C9BA1CF8AF3D0006514A /* MJSettingLogoutItem.m in Sources */,
 				3348C8D31CF887C60006514A /* BaseVC.m in Sources */,
+				8D946B9B1D18D11C00FA4F41 /* PatientCaseModel.m in Sources */,
 				3348C9B71CF8AF3D0006514A /* MJSettingItem.m in Sources */,
 				8DB0C97E1D10EA4B000690BF /* LoginViewController.m in Sources */,
 				3348C8FB1CF887FF0006514A /* UIActionSheet+Fast.m in Sources */,
@@ -1147,6 +1190,7 @@
 				116137FD1D0E5FCE00F67C5B /* StatusSetTableView.m in Sources */,
 				3348C8F81CF887FF0006514A /* NSString+QZCategory.m in Sources */,
 				111973241D0FB2D400096101 /* OrderDetailsFootView.m in Sources */,
+				8D946BA71D18D26000FA4F41 /* MedicalCell.m in Sources */,
 				3348C8F61CF887FF0006514A /* NSObject+QZAddForKVO.m in Sources */,
 				3348C9571CF889560006514A /* LewPopupViewAnimationDrop.m in Sources */,
 				116137F01D0E5FCE00F67C5B /* PatentManagerVC.m in Sources */,

@@ -8,6 +8,8 @@
 
 #import "BaseVC.h"
 
+
 @interface PatentManagerVC : BaseVC
+
 
 @end

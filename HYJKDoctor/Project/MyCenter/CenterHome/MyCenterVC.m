@@ -20,6 +20,8 @@
 #import "StatusSetVC.h"
 #import "PatentManagerVC.h"
 #import "SystemSetVC.h"
+
+#import "TelTools.h"
 @interface MyCenterVC ()
 @property (nonatomic, strong)MineHeaderView *headerView;
 
@@ -86,7 +88,7 @@
     {
         NSLog(@"服务电话");
         //!!! 在此处写打电话的代码
-        
+        [TelTools callNumber:@"4009655525" inView:self.view];
        
     };
     

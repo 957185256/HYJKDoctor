@@ -10,6 +10,8 @@
 #import "TitleSwitch.h"
 #import "AFManager.h"
 #import "OrderCell.h"
+#import "SearchVC.h"
+#import "OrderDetailsVC.h"
 
 @interface OrderVC () <TitleSwitchDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -20,12 +22,17 @@
 @property (nonatomic,strong) NSMutableArray *dataArray1;
 @property (nonatomic,strong) NSMutableArray *dataArray2;
 
+@property (nonatomic,strong) NSString *doctor_id;
+
 @end
 
 @implementation OrderVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"搜索" style:UIBarButtonItemStylePlain target:self action:@selector(search)];
+    self.navigationItem.rightBarButtonItem = rightItem;
     
     TitleSwitch *titleSwitch = [TitleSwitch switchWithleftTitle:@"未处理" rightTitle:@"待诊" frame:CGRectMake(0, 0, ScreenWidth / 2, 25)];
     self.navigationItem.titleView = titleSwitch;
@@ -63,10 +70,17 @@
     
     tableView2.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(reloadData2)];
     tableView2.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData2)];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
-    [self.tableView1.mj_header beginRefreshing];
-    [self.tableView2.mj_header beginRefreshing];
-    
+    if ([Account getAccount].doctor_id != nil && [Account getAccount].doctor_id != self.doctor_id) {
+        self.doctor_id = [Account getAccount].doctor_id;
+        [self.tableView1.mj_header beginRefreshing];
+        [self.tableView2.mj_header beginRefreshing];
+    }
 }
 
 - (void)endRefresh1
@@ -269,6 +283,15 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    OrderCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *order_sn = cell.dataDict[@"order_case_info"][@"order_id"];
+    OrderDetailsVC *controller = [[OrderDetailsVC alloc] init];
+    controller.order_sn = order_sn;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 - (void)titleSwitch:(TitleSwitch *)titleSwitch changeValue:(TitleSwitchValue)value
 {
     if (value == TitleSwitchValueLeft) {
@@ -283,6 +306,11 @@
             self.contentView.frame = CGRectMake(-self.view.width, 0, self.view.width * 2, self.view.height);
         }];
     }
+}
+
+- (void)search
+{
+    [self.navigationController pushViewController:[[SearchVC alloc] init] animated:YES];
 }
 
 @end

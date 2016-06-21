@@ -9,6 +9,7 @@
 #import "PatentManagerVC.h"
 #import "SearchView.h"
 #import "PatentManagerTableView.h"
+#import "PatientCaseController.h"
 
 @interface PatentManagerVC ()
 
@@ -54,6 +55,9 @@
     if (!_tableView)
     {
         _tableView = [[PatentManagerTableView alloc] initWithFrame:CGRectMake(0, _searchView.bottom, ScreenWidth, ScreenHeight - _searchView.bottom) style:UITableViewStylePlain];
+        _tableView.selectBlock = ^(PatientCaseModel *model) {
+            [self.navigationController pushViewController:[PatientCaseController controllerWithPatientDataArray:nil caseModel:model] animated:YES];
+        };
     }
     return _tableView;
 }

@@ -8,6 +8,7 @@
 
 #import "PatentManagerTableView.h"
 #import "PatentManagerTableViewCell.h"
+#import "PatientCaseModel.h"
 
 @implementation PatentManagerTableView
 
@@ -41,6 +42,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+    PatientCaseModel *model = [[PatientCaseModel alloc] init];
+//    model.age = @(10);
+//    model.blood_type =
+    if (self.selectBlock) {
+        self.selectBlock(model);
+    }
 }
 
 @end
